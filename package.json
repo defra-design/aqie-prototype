@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "govuk-prototype-kit dev",
+    "serve": "govuk-prototype-kit serve",
+    "start": "govuk-prototype-kit start",
+    "lint": "standard"
+  },
+  "dependencies": {
+    "govuk-frontend": "^4.4.1",
+    "govuk-prototype-components": "^1.1.0",
+    "govuk-prototype-filters": "^0.1.0",
+    "govuk-prototype-kit": "^13.2.1"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
