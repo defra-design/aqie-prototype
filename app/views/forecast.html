@@ -1,0 +1,197 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set caption = "Air pollution forecast" %}
+{% set title = location.name + ", " + location.region %}
+{% set index = days[0].air_quality.index %}
+{% set band = daqi(index).name | lower %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    href: "/home"
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+
+{%- set panelItems = [] -%}
+{% for day in days %}
+  {%- set aq = day.air_quality -%}
+  {%- set pollutantRows = [] -%}
+  {% set row = pollutantRows.push([{
+      html: "Fine particles (PM<sub>2.5</sub>)"
+    }, {
+      format: "numeric",
+      text: concentration(aq.pm2_5)
+    }, {
+      html: govukTag({
+        classes: "govuk-tag--" + daqi(concentration(aq.pm2_5)).colour,
+        text: daqi(concentration(aq.pm2_5)).name
+      })
+    }],
+    [{
+      html: "Coarse particles (PM<sub>10</sub>)"
+    }, {
+      format: "numeric",
+      text: concentration(aq.pm10, 'pm10')
+    }, {
+      html: govukTag({
+        classes: "govuk-tag--" + daqi(concentration(aq.pm10, 'pm10')).colour,
+        text: daqi(concentration(aq.pm10, 'pm10')).name
+      })
+    }],
+    [{
+      text: "Ozone"
+    }, {
+      format: "numeric",
+      text: concentration(aq.o3, 'o3')
+    }, {
+      html: govukTag({
+        classes: "govuk-tag--" + daqi(concentration(aq.o3, 'o3')).colour,
+        text: daqi(concentration(aq.o3, 'o3')).name
+      })
+    }],
+    [{
+      text: "Nitrogen dioxide"
+    }, {
+      format: "numeric",
+      text: concentration(aq.no2, 'no2')
+    }, {
+      html: govukTag({
+        classes: "govuk-tag--" + daqi(concentration(aq.no2, 'no2')).colour,
+        text: daqi(concentration(aq.no2, 'no2')).name
+      })
+    }],
+    [{
+      text: "Sulphur dioxide"
+    }, {
+      format: "numeric",
+      text: concentration(aq.so2, 'so2')
+    }, {
+      html: govukTag({
+        classes: "govuk-tag--" + daqi(concentration(aq.so2, 'so2')).colour,
+        text: daqi(concentration(aq.so2, 'so2')).name
+      })
+    }])
+  %}
+
+  {% set panelHtml %}
+    <h2 class="govuk-heading-m govuk-visually-hidden">{{ day.date | govukDate }}</h2>
+    <p>{{ day.condition.text }}, with an average temperature of {{ day.avgtemp_c | round }}°C.</p>
+
+    <h2 class="govuk-heading-m">Health advice</h2>
+    {{ daqi(day.air_quality.index).advice | govukMarkdown | safe }}
+    {{ daqi(day.air_quality.index).risk | govukMarkdown | safe if daqi(index).risk }}
+
+    {% if loop.first %}
+      <h2 class="govuk-heading-m">Air pollution alerts</h2>
+
+      {% for alert in alerts %}
+        {% set insetTextHtml %}
+          <p>{{ alert.message }}</p>
+          <p class="govuk-hint">{{ alert.published | govukDate + " at " + alert.published | govukTime }}</p>
+        {% endset %}
+        {{ govukInsetText({
+          classes: "app-inset-text--alert",
+          html: insetTextHtml
+        }) }}
+      {% else %}
+        <p>No air pollution alerts have been issued.</p>
+      {% endfor %}
+
+      <p class="app-action">
+        {{ appIcon({ name: "bell" }) }}
+        <a href="#">Get air pollution alerts for this location</a>
+      </p>
+    {% endif %}
+
+    {{ govukTable({
+      caption: "Pollutants",
+      captionClasses: "govuk-table__caption--m govuk-!-padding-top-2",
+      firstCellIsHeader: true,
+      head: [{
+        text: "Type of pollutant"
+      }, {
+        format: "numeric",
+        text: "Index"
+      }, {
+        text: "Band"
+      }],
+      rows: pollutantRows
+    }) }}
+
+    <p>This forecast is produced by combining data from the Met Office with readings from nearby air quality monitoring stations. The nearest monitoring station is <a href="#">{{ monitor.name }}</a> which is 0.2km away.</p>
+  {% endset %}
+
+  {% set item = panelItems.push({
+    date: day.date,
+    index: day.air_quality.index,
+    panel: {
+      html: panelHtml
+    }
+  }) %}
+{% endfor %}
+
+{% include "includes/details-daqi.html" %}
+
+{{ appForecast({
+  classes: "govuk-!-margin-bottom-0",
+  idPrefix: "forecast-day",
+  items: panelItems
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Air quality in this area</h2>
+
+<p>{{ band | title }} air pollution is <strong>{{ trend }}</strong> for this location.</p>
+
+<p>This location experiences <strong>better</strong> air quality than the regional average.</p>
+
+<p><a href="/regions/{{ region.slug }}">Compare air quality in the {{ region.name }}</a></p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Local air quality improvement</h2>
+
+<p>Local councils are responsible for identifying areas of low air quality. If air quality falls below required standards, they must declare an Air Quality Management Area and publish a plan to improve the air quality.</p>
+
+{{ govukInsetText({
+  html: "The local council for this location is <strong>" + la.name + "</strong>."
+}) }}
+
+<p><a href="/local-authorities/{{ la.gss }}">See how air quality is being improved in this area</a></p>
+
+{% if sca %}
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">Smoke control area</h2>
+
+  <p>This location falls within a smoke control area.</p>
+
+  <p>In England you may have to pay a penalty of up to £300 if your local council decides your chimney releases too much smoke.</p>
+
+  <p>You can be fined up to £1,000 if you burn unauthorised fuel without an exempt appliance.</p>
+
+  <p><a href="https://www.gov.uk/smoke-control-area-rules">Learn more about smoke control areas</a></p>
+{% endif %}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      title: "Understanding air quality",
+      items: [{
+        text: "How air quality is measured",
+        href: "#"
+      }, {
+        text: "Sources of air pollution",
+        href: "#"
+      }, {
+        text: "Pollutants and emissions",
+        href: "#"
+      }]
+    }]
+  }) }}
+{% endblock %}

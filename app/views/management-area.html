@@ -1,0 +1,80 @@
+{% extends "layouts/content.html" %}
+
+{% set caption = la.name %}
+{% set title = name %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/regions/south-east",
+      text: "South East"
+    }, {
+      href: "/local-authorities/" + la.gss,
+      text: la.name
+    }]
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+  {%- set timelineItems = [] -%}
+  {% for event in events %}
+    {% set pollantsHtml %}
+      {% set pollutantsListHtml %}
+        <ul class="govuk-list govuk-list--spaced">
+        {% for pollutant in event.pollutants %}
+          <li>{{ pollutant.type | pollutantName }} – {{ pollutant.range }}</li>
+        {% endfor %}
+        </ul>
+      {% endset %}
+      {{ govukSummaryList({
+        rows: [{
+          key: {
+            text: "Description"
+          },
+          value: {
+            text: event.description
+          }
+        } if event.description, {
+          key: {
+            text: "Source"
+          },
+          value: {
+            text: event.source
+          }
+        } if event.source, {
+          key: {
+            text: "Area map"
+          },
+          value: {
+            html: "<a href=\"https://www.laqmportal.co.uk/aqma_maps/" + event.filename + "\">" + event.filename | replace("%20", " ") + "</a>"
+          }
+        } if event.filename, {
+          key: {
+            text: "Pollutants"
+          },
+          value: {
+            html: pollutantsListHtml
+          }
+        } if event.pollutants]
+      }) }}
+    {% endset %}
+    {% set item = timelineItems.push({
+      label: {
+        text: "Area declared" if loop.first else "Area amended"
+      },
+      datetime: {
+        timestamp: event.date,
+        type: "date"
+      },
+      html: pollantsHtml
+    }) %}
+  {% endfor %}
+
+  {{ mojTimeline({
+    items: timelineItems
+  }) }}
+{% endblock %}

@@ -6,10 +6,13 @@
     "lint": "standard"
   },
   "dependencies": {
+    "@govuk-prototype-kit/common-templates": "^1.0.0",
+    "@ministryofjustice/frontend": "^1.6.4",
     "govuk-frontend": "^4.4.1",
     "govuk-prototype-components": "^1.1.0",
     "govuk-prototype-filters": "^0.1.0",
-    "govuk-prototype-kit": "^13.2.1"
+    "govuk-prototype-kit": "^13.2.1",
+    "luxon": "^3.2.1"
   },
   "devDependencies": {
     "standard": "^17.0.0"

@@ -1,6 +1,52 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "components/cards/macro.njk" import appCards %}
+{% from "components/forecast/macro.njk" import appForecast %}
+{% from "components/icon/macro.njk" import appIcon %}
+{% from "components/search/macro.njk" import appSearch %}
+
+{% if startPage === true %}
+{% set serviceName = false %}
+{% endif %}
+
+{% block pageTitle %}
+{% if title %}{{ title }} – {% endif %}
+{% if not startPage %}{{ serviceName }} – {% endif %}
+GOV.UK
+{% endblock %}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    classes: "govuk-width-container",
+    tag: {
+      text: "Prototype"
+    },
+    text: "This is a prototype of a new service. Some parts may not work yet."
+  }) if not startPage }}
+{% endblock %}
+
+{% if (GOVUKPrototypeKit.isDevelopment) %}
+  {% set footerItems = [{
+    href: "/manage-prototype",
+    text: "Manage your prototype"
+  }, {
+    href: "/manage-prototype/clear-data",
+    text: "Clear data"
+  }] %}
+{% else %}
+  {% set footerItems = [{
+    href: "/manage-prototype/clear-data",
+    text: "Clear data"
+  }] %}
+{% endif %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      html: "Forecasts provided by the <a href=\"https://www.metoffice.gov.uk\" class=\"govuk-footer__link\">Met Office</a>",
+      items: footerItems,
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}

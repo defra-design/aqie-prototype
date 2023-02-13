@@ -1,0 +1,165 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set startPage = true %}
+{% set title = "Daily air quality index" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "https://www.gov.uk",
+      text: "Home"
+    }, {
+      href: "https://www.gov.uk/environment",
+      text: "Environment"
+    }, {
+      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
+      text: "Pollution and environmental quality"
+    }]
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+  <p>The Daily Air Quality Index (DAQI) tells you about levels of air pollution and provides recommended actions and health advice.</p>
+
+  <p>The index is numbered 1 to 10 and divided into four bands, low (1) to very high (10), to provide detail about air pollution levels in a simple way, similar to the sun index or pollen index.</p>
+
+  <h2 class="govuk-heading-m">How to use the Daily Air Quality Index</h2>
+
+  <ol class="govuk-list steps">
+    <li>
+      <p>Determine whether you (or your children) are likely to be at-risk from air pollution.</p>
+      <p>Information on groups who may be affected is given in <a href="/guidance/short-term-health-effects">additional information on the short-term effects of air pollution</a>.</p>
+      <p>Your doctor may also be able to give you advice.</p>
+    </li>
+    <li>
+      <p>If you may be at-risk, and are planning strenuous activity outdoors, <a href="/start">check the air pollution forecast</a>.</p>
+    </li>
+    <li>
+      <p>Use the health messages corresponding to the highest forecast level of pollution as a guide.</p>
+    </li>
+  </ol>
+
+  <h2 class="govuk-heading-m">Health advice for at-risk individuals</h2>
+
+  <p>Adults and children with heart or lung problems are at greater risk of symptoms.</p>
+
+  <p>Follow your doctor’s usual advice about exercising and managing your condition.</p>
+
+  {{ govukTable({
+    firstCellIsHeader: true,
+    head: [{
+      text: "Band"
+    }, {
+      text: "Value"
+    }, {
+      text: "Health message"
+    }],
+    rows: [
+      [{
+        text: "Low"
+      }, {
+        format: "numeric",
+        text: "1–3"
+      }, {
+        html: "Enjoy your usual outdoor activities." | govukMarkdown
+      }],
+      [{
+        text: "Moderate"
+      }, {
+        format: "numeric",
+        text: "4–6"
+      }, {
+        html: "Adults and children with lung problems, and adults with heart problems, who experience symptoms, should consider reducing strenuous physical activity, particularly outdoors." | govukMarkdown
+      }],
+      [{
+        text: "High"
+      }, {
+        format: "numeric",
+        text: "7–9"
+      }, {
+        html: "Adults and children with lung problems, and adults with heart problems, should reduce strenuous physical exertion, particularly outdoors, and particularly if they experience symptoms.\n\nPeople with asthma may find they need to use their reliever inhaler more often.\n\nOlder people should also reduce physical exertion." | govukMarkdown
+      }],
+      [{
+        text: "Very high"
+      }, {
+        format: "numeric",
+        text: "10"
+      }, {
+        html: "Adults and children with lung problems, adults with heart problems, and older people, should avoid strenuous physical activity. \n\nPeople with asthma may find they need to use their reliever inhaler more often." | govukMarkdown
+      }]
+    ]
+  }) }}
+
+  {{ govukTable({
+    caption: "Health advice for the general population",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: true,
+    head: [{
+      text: "Band"
+    }, {
+      text: "Value"
+    }, {
+      text: "Health message"
+    }],
+    rows: [
+      [{
+        text: "Low"
+      }, {
+        format: "numeric",
+        text: "1–3"
+      }, {
+        html: "Enjoy your usual outdoor activities." | govukMarkdown
+      }],
+      [{
+        text: "Moderate"
+      }, {
+        format: "numeric",
+        text: "4–6"
+      }, {
+        html: "Enjoy your usual outdoor activities." | govukMarkdown
+      }],
+      [{
+        text: "High"
+      }, {
+        format: "numeric",
+        text: "7–9"
+      }, {
+        html: "Consider reducing activity, particularly outdoors, if you experience discomfort such as sore eyes, cough or sore throat." | govukMarkdown
+      }],
+      [{
+        text: "Very high"
+      }, {
+        format: "numeric",
+        text: "10"
+      }, {
+        html: "Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat." | govukMarkdown
+      }]
+    ]
+  }) }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

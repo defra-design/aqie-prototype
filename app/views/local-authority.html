@@ -1,0 +1,92 @@
+{% extends "layouts/content.html" %}
+
+{% set title = name %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/regions/south-east",
+      text: "South East"
+    }]
+  }) }}
+{% endblock %}
+
+{% block contentColumn %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Air Quality Management Areas</h2>
+
+      <p>If air quality falls below required standards, a local authority must declare an Air Quality Management Area and publish a plan to improve the air quality. This area could be just one or two streets, or it could be much bigger.</p>
+
+{% if laqms.length %}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-full">
+    {% set listHtml %}
+      <ul class="govuk-list govuk-list--bullet">
+      {% for laqm in laqms %}
+        <li>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/management-areas/{{ laqm.id }}">{{ laqm.name }}</a></h3>
+          <p class="govuk-hint">{{ (laqm.events | last).date | govukDate }}</p>
+          <p>{{ (laqm.events | last).description }}</p>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endset %}
+
+    {% set mapHtml %}
+      <a href="#"><img src="/public/images/aqma-map.png" alt="" width="100%"></a>
+    {% endset %}
+
+    {{ govukTabs({
+      items: [{
+        label: "View as a list",
+        id: "list",
+        panel: {
+          html: listHtml
+        }
+      }, {
+        label: "View on a map",
+        id: "map",
+        panel: {
+          html: mapHtml
+        }
+      }]
+    }) }}
+{% else %}
+    {{ govukInsetText({
+      text: name + " has not declared any air quality management areas."
+    }) }}
+{% endif %}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Consulations</h2>
+
+      {{ govukInsetText({
+        text: name + " has no open consultations on air quality."
+      }) }}
+
+      <h2 class="govuk-heading-m">Documents</h2>
+
+      <p>{{ name }} has published the following documents:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <p>
+            <a href="https://www.brighton-hove.gov.uk/sites/default/files/2022-11/Brighton%20%26%20Hove%20City%20Council%20Air%20Quality%20Annual%20Status%20Report_2022.pdf">2022 Air Quality Annual Status Report (ASR)</a><br>
+            <span class="govuk-hint">PDF, 16 MB, 69 pages</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

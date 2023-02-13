@@ -1,0 +1,124 @@
+{% extends "layouts/content.html" %}
+
+{% set title = name %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }]
+  }) }}
+{% endblock %}
+
+{% block contentColumn %}
+  <!-- Regional air pollution summary -->
+  <section class="app-section">
+    <div class="app-section__heading">
+      <h2 class="govuk-heading-m">Air pollution summary</h2>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half-from-desktop">
+        {{ govukSummaryList({
+          rows: [{
+            key: {
+              text: "Today"
+            },
+            value: {
+              text: "Low air pollition levels expected today. Moderate air pollution may develop under light winds around northern Kent."
+            }
+          }, {
+            key: {
+              text: "Tomorrow"
+            },
+            value: {
+              text: "Low air pollution levels are expected tommorrow, with fresh northeasterly winds preventing the buildup of air pollutants."
+            }
+          }, {
+            key: {
+              text: "Outlook"
+            },
+            value: {
+              text: "Pollution levels mainly low. Isolated pockets of Moderate air pollution may develop near busy roads and urban centres where light winds occur."
+            }
+          }, {
+            key: {
+              text: "Alerts"
+            },
+            value: {
+              text: "No air pollution alerts have been issued."
+            }
+          }]
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-half-from-desktop">
+        <img src="/public/images/zones-south-east.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional air pollution summary -->
+  <section class="app-section">
+    <div class="app-section__heading">
+      <h2 class="govuk-heading-m">Local authorities</h2>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {%- set panelItems = [] -%}
+        {% for pollutant in pollutants %}
+          {% set panelHtml %}
+            {%- set laRows = [] -%}
+            {% for la in las %}
+              {% set consentrationValue = randomNumber(1, pollutant.max) | round(2) %}
+              {% set row = laRows.push([{
+                html: "<a href=\"/local-authorities/" + la.gss + "\">" + la.name + "</a>"
+              }, {
+                format: "numeric",
+                text: consentrationValue
+              }, {
+                format: "numeric",
+                text: concentration(consentrationValue, pollutant.id)
+              }, {
+                html: govukTag({
+                  classes: "govuk-tag--" + daqi(concentration(consentrationValue, pollutant.id)).colour,
+                  text: daqi(concentration(consentrationValue, pollutant.id)).name
+                })
+              }]) %}
+            {% endfor %}
+            {{ govukTable({
+              caption: pollutant.name + ": 30-day running mean",
+              captionClasses: "govuk-table__caption--m",
+              head: [{
+                text: "Local authority name"
+              }, {
+                format: "numeric",
+                text: "µg/m³"
+              }, {
+                format: "numeric",
+                text: "Index"
+              }, {
+                text: "Band"
+              }],
+              rows: laRows
+            }) }}
+          {% endset %}
+
+          {% set item = panelItems.push({
+            label: pollutant.name,
+            id: pollutant.id,
+            panel: {
+              html: panelHtml
+            }
+          }) %}
+        {% endfor %}
+
+        {{ govukTabs({
+          items: panelItems
+        }) }}
+      </div>
+    </div>
+  </section>
+{% endblock %}

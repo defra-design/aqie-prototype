@@ -1,0 +1,11 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Local authorities" %}
+
+{% block bodyColumn %}
+  <ul class="govuk-list govuk-list--spaced">
+  {% for la in las %}
+    <li><a href="/local-authorities/{{ la.gss }}">{{ la.name }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}

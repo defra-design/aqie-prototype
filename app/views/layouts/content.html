@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% set pageHeadingSize = pageHeadingSize or "l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-{{ pageHeadingSize }}">
+        {% if caption %}
+          <span class="govuk-caption-{{ pageHeadingSize }}">{{ caption }}</span>
+        {% endif %}
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+
+  {% block contentColumn %}
+  <div class="govuk-grid-row" data-module="edge">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      {% block bodyColumn %}{% endblock %}
+    </div>
+    {% if hasSidebarColumn %}
+    <div class="govuk-grid-column-one-third-from-desktop">
+      {% block sidebarColumn %}{% endblock %}
+    </div>
+    {% endif %}
+  </div>
+  {% endblock %}
+{% endblock %}

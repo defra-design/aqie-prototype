@@ -1,22 +1,62 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/content.html" %}
 
-{% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set startPage = true %}
+{% set title = "Get air quality information" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "https://www.gov.uk",
+      text: "Home"
+    }, {
+      href: "https://www.gov.uk/environment",
+      text: "Environment"
+    }, {
+      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
+      text: "Pollution and environmental quality"
+    }]
+  }) }}
 {% endblock %}
 
-{% block content %}
+{% block bodyColumn %}
+  <p>Use this service to:</p>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <ul class="govuk-list govuk-list--bullet">
+    <li>check the risk to your health from local air pollution</li>
+    <li>compare air quality across the UK</li>
+    <li>see how you local council is improving air quality</li>
+    <li>find out if you live in a smoke control area</li>
+  </ul>
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+  {{ govukButton({
+    text: "Start now",
+    href: "/home",
+    isStartButton: true
+  }) }}
+{% endblock %}
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
-</div>
-
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Daily air quality index",
+        href: "/guidance/daily-air-quality-index"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
 {% endblock %}

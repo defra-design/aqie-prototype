@@ -1,0 +1,82 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set startPage = true %}
+{% set title = "Short-term effects of air pollution" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "https://www.gov.uk",
+      text: "Home"
+    }, {
+      href: "https://www.gov.uk/environment",
+      text: "Environment"
+    }, {
+      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
+      text: "Pollution and environmental quality"
+    }, {
+      href: "/guidance/daily-air-quality-index",
+      text: "Daily air quality index"
+    }]
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+  <p>Air pollution has a range of effects on health. However, air pollution in the UK does not rise to levels at which people need to make major changes to their habits to avoid exposure.</p>
+
+  <h3 class="govuk-heading-m">Adults and children with lung or heart conditions</h3>
+
+  <p>When levels of air pollutants rise, adults suffering from heart conditions, and adults and children with lung conditions, are at increased risk of becoming ill and needing treatment.</p>
+
+  <p>Only a minority of those who suffer from these conditions are likely to be affected and it is not possible to predict in advance who will be affected.</p>
+
+  <p>Some people are aware that air pollution affects their health: adults and children with asthma may notice that they need to increase their use of inhaled reliever medication on days when levels of air pollution are higher than average.</p>
+
+  <p>Adults with heart and circulatory conditions should not modify their treatment schedules on the basis of advice provided by the air quality index: such modification should only be made on a health practitioner’s advice.</p>
+
+  <h2 class="govuk-heading-m">Older people</h2>
+
+  <p>Older people are more likely to suffer from heart and lung conditions than young people and so it makes sense for them to be aware of current air pollution conditions and avoid exertion on High pollution days.</p>
+
+  <h2 class="govuk-heading-m">Children</h2>
+
+  <p>Children need not be kept from school or prevented from taking part in games.</p>
+
+  <p>Children with asthma may notice that they need to increase their use of reliever medication on days when levels of air pollution are higher than average.<p>
+
+  <h2 class="govuk-heading-m">Athletes</h2>
+
+  <p>Some athletes, even if they are not asthmatic, may find their performance is less good than expected when levels of a certain air pollutant (ground-level ozone) are High, and they may notice that deep breathing causes some discomfort in the chest.</p>
+
+  <p>This might be expected in summer on days when ground-level ozone levels are raised. This does not mean that they are in danger but it may be sensible for them to limit their activities on such days.</p>
+
+  <h2 class="govuk-heading-m">General population</h2>
+
+  <p>At Very High levels of air pollution, even healthy individuals may experience a sore or dry throat, sore eyes or, in some cases, a tickly cough.</p>
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Management areas" %}
+
+{% block bodyColumn %}
+  {% for la, laqm in laqms %}
+    <h2 class="govuk-heading-m">{{ la }}</h2>
+    <ul class="govuk-list govuk-list--spaced">{% for area in laqm %}
+      <li><a href="/management-areas/1">{{ area.name }}</a></li>
+    {% endfor %}</ul>
+  {% endfor %}
+{% endblock %}
