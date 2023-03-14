@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon')
 const govukPrototypeKit = require('govuk-prototype-kit')
-const { addFilter, addGlobal } = govukPrototypeKit.views
+const { addFilter, addFunction } = govukPrototypeKit.views
 const daqi = require('./data/daqi.js')
 const pollutants = require('./data/pollutants.js')
 
@@ -10,7 +10,7 @@ const pollutants = require('./data/pollutants.js')
  * @param {number} index - DAQI index
  * @returns {object} DAQI data for given index
  */
-addGlobal('daqi', index => {
+addFunction('daqi', index => {
   switch (true) {
     case [4, 5, 6].includes(index):
       return daqi.moderate
@@ -30,7 +30,7 @@ addGlobal('daqi', index => {
  * @param {string} [pollutant=pm2_5] - Pollutant ID
  * @returns {number} Index
  */
-addGlobal('concentration', (value, pollutant = 'pm2_5') => {
+addFunction('concentration', (value, pollutant = 'pm2_5') => {
   const { boundaries } = pollutants.find(p => p.id === pollutant)
   return boundaries.findLastIndex(index => value >= index) + 1
 })
@@ -42,7 +42,7 @@ addGlobal('concentration', (value, pollutant = 'pm2_5') => {
  * @param {number} max - Maximum value
  * @returns {number} Random number
  */
-addGlobal('randomNumber', (min, max) => {
+addFunction('randomNumber', (min, max) => {
   return Math.random() * (max - min) + min
 })
 
@@ -53,7 +53,7 @@ addGlobal('randomNumber', (min, max) => {
  * @param {string} format - Date format
  * @returns {string} Formatted date with added days
  */
-addGlobal('nowPlusDays', (days, format = 'yyyy-LL-dd') => {
+addFunction('nowPlusDays', (days, format = 'yyyy-LL-dd') => {
   const date = DateTime.local().plus({ days })
 
   return DateTime.fromISO(date, {
