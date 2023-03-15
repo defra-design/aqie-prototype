@@ -1,0 +1,60 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set caption = "Causes of air pollution" %}
+{% set title = "Ozone (O₃)" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/pollutants",
+      text: caption
+    }]
+  }) }}
+{% endblock %}
+
+{% set markdownContent %}
+Ozone is not emitted directly from any human- made source. It arises from chemical reactions between various air pollutants, primarily [NOX](/pollutants/oxides-of-nitrogen) and Volatile Organic Compounds (VOCs), initiated by strong sunlight.
+
+Formation can take place over several hours or days and may have arisen from emissions many hundreds, or even thousands of kilometres away.
+
+## Effects on health and the environment
+
+Exposure to high concentrations may cause irritation to eyes and nose. Very high levels can damage airways leading to inflammatory reactions.
+
+Ozone reduces lung function and increases incidence of respiratory symptoms, respiratory hospital admissions and mortality.
+
+Ground level ozone can also cause damage to many plant species leading to loss of yield and quality of crops, damage to forests and impacts on biodiversity.
+{% endset %}
+
+{% block bodyColumn %}
+  {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

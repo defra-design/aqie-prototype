@@ -1,0 +1,60 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set caption = "Causes of air pollution" %}
+{% set title = "Oxides of nitrogen (NOX)" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/pollutants",
+      text: caption
+    }]
+  }) }}
+{% endblock %}
+
+{% set markdownContent %}
+All combustion processes in air produce oxides of nitrogen (NOX). Nitrogen dioxide (NO₂) and nitric oxide (NO) are both oxides of nitrogen and together are referred to as NOX. Road transport is the main source, followed by the electricity supply industry and other industrial and commercial sectors.
+
+## Effects on health and the environment
+
+NO₂ is associated with adverse effects on human health. At high levels NO₂ causes inflammation of the airways. Long term exposure may affect lung function and respiratory symptoms.
+
+NO₂ also enhances the response to allergens in sensitive individuals. High levels of NOX can have an adverse effect on vegetation, including leaf or needle damage and reduced growth.
+
+Deposition of pollutants derived from NOX emissions contribute to acidification and/or eutrophication of sensitive habitats leading to loss of biodiversity, often at locations far removed from the original emissions.
+
+NOX also contributes to the formation of secondary particles and ground level ozone, both of which are associated with ill-health effects. Ozone also damages vegetation.
+{% endset %}
+
+{% block bodyColumn %}
+  {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set caption = "Causes of air pollution" %}
+{% set title = "Polycyclic aromatic hydrocarbons (PAHs)" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/pollutants",
+      text: caption
+    }]
+  }) }}
+{% endblock %}
+
+{% set markdownContent %}
+There are many different PAHs emanating from a variety of sources. This strategy uses benzo[a]pyrene (B[a]P) as a marker for the most hazardous PAHs.
+
+The main sources of B[a]P in the UK are domestic coal and wood burning, fires (eg accidental fires, bonfires, forest fires, etc), and industrial processes such as coke production. Road transport is the largest source for total PAHs, but this source is dominated by species thought to be less hazardous than B[a]P.
+
+## Effects on health and the environment
+
+Studies of occupational exposure to PAHs have shown an increased incidence of tumours of the lung, skin and possibly bladder and other sites. Lung cancer is most obviously linked to exposure to PAHs through inhaled air. Individual PAHs vary in their ability to induce tumours in animals or humans. The carcinogenic potency of some PAHs is unknown or uncertain.
+
+Individual PAHs have been classified by the International Agency for Research on Cancer, with three classified as “probably carcinogenic to humans”, including B[a]P, and three classified as “possibly carcinogenic to humans”.
+{% endset %}
+
+{% block bodyColumn %}
+  {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

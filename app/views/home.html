@@ -1,116 +1,35 @@
-{% extends "layouts/content.html" %}
+{% extends "layouts/form.html" %}
 
 {% set title = "Air pollution forecast" %}
+{% set formAction = "/summary" %}
 
-{% block contentColumn %}
-  <!-- Location forecast -->
-  <form action="/forecast/">
-    {{ appSearch({
-      label: {
-        text: "Enter a location",
-        classes: "govuk-label--m",
-        isPageHeading: false
-      },
-      hint: {
-        text: "For example ‘Westminster’ or ‘SW1A 2AA’"
-      },
-      id: "q",
-      name: "q"
-    }) }}
-  </form>
+{% block form %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [{
+      text: "Enter a valid postcode",
+      href: "#q"
+    }]
+  }) if error }}
 
-  <!-- UK air pollution summary -->
-  <section class="app-section">
-    <div class="app-section__heading">
-      <h2 class="govuk-heading-m">UK air pollution summary</h2>
-    </div>
+  {{ govukInput({
+    classes: "govuk-input--width-20",
+    label: {
+      text: "Get the air quality for your location",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Enter a postcode, for example ‘SW1A 2AA’"
+    },
+    errorMessage: {
+      text: "Enter a valid postcode"
+    } if error,
+    id: "q",
+    name: "q"
+  }) }}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-        {{ govukSummaryList({
-          classes: "app-summary-list--uk-summary",
-          rows: [{
-            key: {
-              text: "Today"
-            },
-            value: {
-              text: "Low air pollution levels are expected today, with fresh northeasterly winds preventing the buildup of air pollutants."
-            }
-          }, {
-            key: {
-              text: "Tomorrow"
-            },
-            value: {
-              text: "Mainly Low air pollution tomorrow. Isolated pockets of Moderate air pollution may develop under light winds in the south near busy roads and urban centres."
-            }
-          }, {
-            key: {
-              text: "Outlook"
-            },
-            value: {
-              text: "Pollution levels mainly low. Isolated pockets of Moderate air pollution may develop near busy roads and urban centres where light winds occur."
-            }
-          }, {
-            key: {
-              text: "Alerts"
-            },
-            value: {
-              text: "No air pollution alerts have been issued."
-            }
-          }]
-        }) }}
-      </div>
-      <div class="govuk-grid-column-one-third-from-desktop">
-        <img src="/public/images/zones.svg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!-- Regional air quality -->
-  <section class="app-section">
-    <div class="app-section__heading">
-      <h2 class="govuk-heading-m">Regional air quality</h2>
-    </div>
-
-    <ul class="govuk-list govuk-list--spaced app-list--column">
-    {% for region in regions %}
-      <li><a href="/regions/{{ region.slug }}">{{ region.name }}</a></li>
-    {% endfor %}
-    </ul>
-  </section>
-
-  <!-- Understanding air quality -->
-  <section class="app-section" data-module="edge">
-    <div class="app-section__heading">
-      <h2 class="govuk-heading-m">Understanding air quality</h2>
-    </div>
-
-    {{ appCards({
-      items: [{
-        href: "#",
-        text: "What is air quality?",
-        description: "Air quality is the term we use to describe how polluted the air we breathe is."
-      }, {
-        href: "#",
-        text: "Sources of air pollution",
-        description: "The government is committed to reducing emissions from the 5 most damaging pollutants."
-      }, {
-        href: "#",
-        text: "How air pollution harms health",
-        description: "Air pollution is a major public health risk, ranking alongside cancer, heart disease and obesity."
-      }, {
-        href: "#",
-        text: "Measuring air quality",
-        description: "A network of approximately 171 monitors is used to measuring concentrations of key pollutants."
-      }, {
-        href: "#",
-        text: "Air quality improvement measures",
-        description: "Improving air quality is crucial to reduce the health impacts and help people live longer, healthier lives."
-      }, {
-        href: "#",
-        text: "Burning wood, coal or other solid fuels at home",
-        description: "Burning solid fuels releases harmful pollutants straight into the home as well as into the air outside."
-      }]
-    }) }}
-  </section>
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 {% endblock %}

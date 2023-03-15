@@ -2,8 +2,6 @@
   @include govuk-responsive-margin(6, "bottom");
   display: flex;
   align-items: end;
-  padding: govuk-spacing(4);
-  background-color: govuk-colour("light-grey");
 }
 
 .app-search__form-group {

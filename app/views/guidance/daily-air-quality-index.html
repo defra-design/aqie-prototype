@@ -2,23 +2,7 @@
 
 {% set hasSidebarColumn = true %}
 {% set pageHeadingSize = "xl" %}
-{% set startPage = true %}
 {% set title = "Daily air quality index" %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [{
-      href: "https://www.gov.uk",
-      text: "Home"
-    }, {
-      href: "https://www.gov.uk/environment",
-      text: "Environment"
-    }, {
-      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
-      text: "Pollution and environmental quality"
-    }]
-  }) }}
-{% endblock %}
 
 {% block bodyColumn %}
   <p>The Daily Air Quality Index (DAQI) tells you about levels of air pollution and provides recommended actions and health advice.</p>
@@ -30,7 +14,7 @@
   <ol class="govuk-list steps">
     <li>
       <p>Determine whether you (or your children) are likely to be at-risk from air pollution.</p>
-      <p>Information on groups who may be affected is given in <a href="/guidance/short-term-health-effects">additional information on the short-term effects of air pollution</a>.</p>
+      <p>Information on groups who may be affected is given in <a href="/guidance/health-effects">additional information on the short-term effects of air pollution</a>.</p>
       <p>Your doctor may also be able to give you advice.</p>
     </li>
     <li>

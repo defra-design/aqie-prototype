@@ -1,7 +1,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-<div class="app-search">
+<div class="app-search {%- if params.classes %} {{ params.classes }}{% endif -%}">
   {{ govukInput({
     id: params.id,
     name: params.name,

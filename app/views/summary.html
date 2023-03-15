@@ -1,0 +1,155 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Air quality summary for " + location.postcode %}
+{% set pageHeadingSize = "xl" %}
+{% set hasSidebarColumn = true %}
+
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBackLink({
+    href: "/home"
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+{% set markdownContent %}
+Air quality in the UK is generally good, but is influenced by local sources of pollution, such as busy roads and heavy industry. It is also strongly linked to weather conditions.
+
+***
+
+## Air quality and you
+
+Adults and children with heart or lung problems are at greater risk of symptoms, while sensitive individuals may experience health effects, even with low levels of air pollition.
+
+{{ appActionLink({
+  text: "Protect yourself during episodes of bad pollution",
+  href: "#",
+  size: "small"
+}) }}
+
+***
+
+## Air quality in your home
+
+Air quality can be an issue inside buildings as well as outside. Common indoor air pollutants include:
+
+* tobacco smoke
+* Radon (Rn)
+* [Carbon monoxide (CO)](/pollutants/carbon-monoxide)
+* volatile organic compounds (VOCs)
+* mould and mildrew
+
+{{ appActionLink({
+  text: "Improve the air quality in your home",
+  href: "#",
+  size: "small"
+}) }}
+
+***
+
+## Air quality in your neighbourhood
+
+As the {{ council.ward }} neighbourhood lies within an urban area, pollution will likely be caused by power generation, industrial combustion and road transport.
+
+Common pollutants include:
+
+* [Nitrogen dioxide (NO₂)](/pollutants/oxides-of-nitrogen)
+* [Sulphur dioxide (SO₂)](/pollutants/sulphur-dioxide)
+* [Ozone (O₃)](/pollutants/ozone)
+* [Small airborne particles (PM2.5 and PM10)](/pollutants/particulate-matter) containing materials like soot and wind-blown dust
+
+### Smoke from chimneys
+
+In England you may have to pay a penalty of up to £300 if your local council decides your chiminey releases too much smoke.
+
+You can be fined up to £1,000 if you burn unauthorised fuel without an exempt applicance.
+
+{{ appActionLink({
+  text: "Check if your address lies within a smoke control area",
+  href: "#",
+  size: "small"
+}) }}
+
+### Air pollution forecast
+
+The [daily air quality index](/guidance/daily-air-quality-index) is used in air pollution forecasts. It is numbered 1 to 10 and divided into four bands, low (1) to very high (10). It is often shown in weather apps and websites.
+
+Forecasts are produced by combining data from the Met Office with readings from [nearby air quality monitoring stations](#).
+
+{{ appActionLink({
+  text: "Get a 5-day pollution forecast for " + location.postcode,
+  href: "/forecast?q=" + location.postcode,
+  size: "small"
+}) }}
+
+***
+
+## Air quality in {{ location.name }}
+
+{{ govukInsetText({
+  classes: "govuk-!-margin-top-0",
+  html: "Local councils are responsible for improving air quality. The local council in this postcode is <b>" + council.name + "</b>."
+}) }}
+
+### Monitoring
+
+This council is monitoring parts of {{ location.name }} because levels of pollution are too high and do not comply with health standards.
+
+{{ appActionLink({
+  text: "See where air pollution is being monitored",
+  href: "#",
+  size: "small"
+}) }}
+
+### Actions being taken to improve air quality
+
+Local councils need to provide a plan of measures and achievement dates that show how they intend to achieve air quality limit values.
+
+{% for item in documents %}
+* [{{ item.title }}]({{ item.href }})\
+  <span class="govuk-hint">{{ item.meta }}</span>
+{%- endfor %}
+
+***
+
+## Air quality in the UK
+
+Air quality has continually improved over the last 30 years with the move to renewable energy and tighter regulation around dangerous pollutants.
+
+The UK government is now focused on reducing pollution from agriculture and domestic wood burning.
+
+It is also working with local authorities and devolved administrations to support the development of Clean Air Zones and encourage active travel.
+
+{{ appActionLink({
+  text: "Environmental Improvement Plan 2023",
+  href: "#",
+  size: "small"
+}) }}
+{% endset %}
+
+{{ markdownContent | govukMarkdown | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Daily air quality index",
+        href: "/guidance/daily-air-quality-index"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

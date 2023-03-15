@@ -13,6 +13,7 @@ exports.get = async (req, res) => {
 
   res.locals = {
     ...res.locals,
+    ...req.query,
     ...{ regions }
   }
 

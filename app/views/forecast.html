@@ -20,7 +20,7 @@
   {%- set aq = day.air_quality -%}
   {%- set pollutantRows = [] -%}
   {% set row = pollutantRows.push([{
-      html: "Fine particles (PM<sub>2.5</sub>)"
+      html: '<a href="/pollutants/particulate-matter">Fine particles (PM2.5)</a>'
     }, {
       format: "numeric",
       text: concentration(aq.pm2_5)
@@ -31,7 +31,7 @@
       })
     }],
     [{
-      html: "Coarse particles (PM<sub>10</sub>)"
+      html: '<a href="/pollutants/particulate-matter">Coarse particles (PM10)</a>'
     }, {
       format: "numeric",
       text: concentration(aq.pm10, 'pm10')
@@ -42,7 +42,7 @@
       })
     }],
     [{
-      text: "Ozone"
+      html: '<a href="/pollutants/ozone">Ozone (O₃)</a>'
     }, {
       format: "numeric",
       text: concentration(aq.o3, 'o3')
@@ -53,7 +53,7 @@
       })
     }],
     [{
-      text: "Nitrogen dioxide"
+      html: '<a href="/pollutants/oxides-of-nitrogen">Nitrogen dioxide (NO₂)</a>'
     }, {
       format: "numeric",
       text: concentration(aq.no2, 'no2')
@@ -64,7 +64,7 @@
       })
     }],
     [{
-      text: "Sulphur dioxide"
+      html: '<a href="/pollutants/sulphur-dioxide">Sulphur dioxide (SO₂)</a>'
     }, {
       format: "numeric",
       text: concentration(aq.so2, 'so2')
@@ -100,10 +100,12 @@
         <p>No air pollution alerts have been issued.</p>
       {% endfor %}
 
-      <p class="app-action">
-        {{ appIcon({ name: "bell" }) }}
-        <a href="#">Get air pollution alerts for this location</a>
-      </p>
+      {{ appActionLink({
+        text: "Get air pollution alerts for this location",
+        href: "#",
+        size: "small",
+        type: "alert"
+      }) }}
     {% endif %}
 
     {{ govukTable({
@@ -140,57 +142,27 @@
   idPrefix: "forecast-day",
   items: panelItems
 }) }}
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<h2 class="govuk-heading-m">Air quality in this area</h2>
-
-<p>{{ band | title }} air pollution is <strong>{{ trend }}</strong> for this location.</p>
-
-<p>This location experiences <strong>better</strong> air quality than the regional average.</p>
-
-<p><a href="/regions/{{ region.slug }}">Compare air quality in the {{ region.name }}</a></p>
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<h2 class="govuk-heading-m">Local air quality improvement</h2>
-
-<p>Local councils are responsible for identifying areas of low air quality. If air quality falls below required standards, they must declare an Air Quality Management Area and publish a plan to improve the air quality.</p>
-
-{{ govukInsetText({
-  html: "The local council for this location is <strong>" + la.name + "</strong>."
-}) }}
-
-<p><a href="/local-authorities/{{ la.gss }}">See how air quality is being improved in this area</a></p>
-
-{% if sca %}
-  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-  <h2 class="govuk-heading-m">Smoke control area</h2>
-
-  <p>This location falls within a smoke control area.</p>
-
-  <p>In England you may have to pay a penalty of up to £300 if your local council decides your chimney releases too much smoke.</p>
-
-  <p>You can be fined up to £1,000 if you burn unauthorised fuel without an exempt appliance.</p>
-
-  <p><a href="https://www.gov.uk/smoke-control-area-rules">Learn more about smoke control areas</a></p>
-{% endif %}
 {% endblock %}
 
 {% block sidebarColumn %}
   {{ xGovukRelatedNavigation({
     sections: [{
-      title: "Understanding air quality",
       items: [{
-        text: "How air quality is measured",
-        href: "#"
-      }, {
-        text: "Sources of air pollution",
-        href: "#"
-      }, {
-        text: "Pollutants and emissions",
-        href: "#"
+        text: "Daily air quality index",
+        href: "/guidance/daily-air-quality-index"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
       }]
     }]
   }) }}

@@ -93,23 +93,58 @@ sub, sup {
   border-spacing: 2px;
   border-collapse: separate;
 
+  .govuk-table__header,
+  .govuk-table__cell {
+    border: 0;
+    width: 10%;
+    vertical-align: bottom;
+  }
+
   .govuk-table__header {
     @include govuk-font($size: 14, $weight: regular);
-    border: 0;
-    vertical-align: bottom;
-    width: 10%;
   }
 
   .govuk-table__cell {
     @include govuk-font($size: 16, $weight: bold);
-    border: 0;
     padding: govuk-spacing(2);
     text-align: center;
-    width: 10%;
   }
 }
 
-// DAQI
+.app-table--forecast {
+  border-spacing: govuk-spacing(1);
+  border-collapse: separate;
+
+  .govuk-table__caption {
+    padding-top: govuk-spacing(2);
+  }
+
+  .govuk-table__header,
+  .govuk-table__cell {
+    border: 0;
+    text-align: center;
+    width: 20%;
+    vertical-align: bottom;
+  }
+
+  .govuk-table__header {
+    @include govuk-font($size: 16, $weight: regular);
+    padding: govuk-spacing(1);
+  }
+
+  .govuk-table__cell {
+    @include govuk-font($size: 16, $weight: bold);
+    padding: govuk-spacing(2);
+
+    span {
+      @include govuk-font($size: 27);
+      display: block;
+      font-weight: normal;
+    }
+  }
+}
+
+// DAQI colors (vivid)
 .daqi-1 {
   background-color: $daqi-colour-1;
   color: govuk-colour("white");
@@ -158,4 +193,55 @@ sub, sup {
 .daqi-10 {
   background-color: $daqi-colour-10;
   color: govuk-colour("white");
+}
+
+// DAQI colors (pastel)
+.app-tag--daqi-1 {
+  background: govuk-tint($daqi-colour-1, 70%);
+  color: govuk-shade($daqi-colour-1, 50%);
+}
+
+.app-tag--daqi-2 {
+  background: govuk-tint($daqi-colour-2, 75%);
+  color: govuk-shade($daqi-colour-2, 35%);
+}
+
+.app-tag--daqi-3 {
+  background: govuk-tint($daqi-colour-3, 80%);
+  color: govuk-shade($daqi-colour-3, 20%);
+}
+
+.app-tag--daqi-4 {
+  background: govuk-tint($daqi-colour-4, 75%);
+  color: govuk-shade($daqi-colour-4, 65%);
+}
+
+.app-tag--daqi-5 {
+  background: govuk-tint($daqi-colour-5, 72.5%);
+  color: govuk-shade($daqi-colour-5, 60%);
+}
+
+.app-tag--daqi-6 {
+  background: govuk-tint($daqi-colour-6, 70%);
+  color: govuk-shade($daqi-colour-6, 55%);
+}
+
+.app-tag--daqi-7 {
+  background: govuk-tint($daqi-colour-7, 80%);
+  color: govuk-shade($daqi-colour-7, 30%);
+}
+
+.app-tag--daqi-8 {
+  background: govuk-tint($daqi-colour-8, 83.33%);
+  color: govuk-shade($daqi-colour-8, 30%);
+}
+
+.app-tag--daqi-9 {
+  background: govuk-tint($daqi-colour-9, 86.67%);
+  color: govuk-shade($daqi-colour-9, 30%);
+}
+
+.app-tag--daqi-10 {
+  background: govuk-tint($daqi-colour-10, 90%);
+  color: govuk-shade($daqi-colour-10, 30%);
 }

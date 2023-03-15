@@ -1,0 +1,22 @@
+{% macro forecast(caption) %}
+<table class="govuk-table app-table--forecast">
+  <caption class="govuk-table__caption">{{ caption }}</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">{% for item in days -%}
+      {%- if loop.index == 1 %}{% set header = "Today" -%}
+      {%- elif loop.index == 2 -%}{% set header = "Tomorrow" -%}
+      {%- else -%}{% set header = item.date | govukDate("truncate") -%}
+      {%- endif -%}
+      <th scope="col" class="govuk-table__header">{{ header }}</th>
+    {%- endfor %}</tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">{% for item in days -%}
+      <td class="govuk-table__cell app-tag--daqi-{{ item.air_quality.index }}">
+        {{ daqi(item.air_quality.index).name }}
+        <span>{{ item.air_quality.index }}</span>
+      </td>
+    {%- endfor %}</tr>
+  </tbody>
+</table>
+{% endmacro %}

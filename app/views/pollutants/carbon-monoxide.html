@@ -1,0 +1,56 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set caption = "Causes of air pollution" %}
+{% set title = "Carbon monoxide (CO)" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/pollutants",
+      text: caption
+    }]
+  }) }}
+{% endblock %}
+
+{% set markdownContent %}
+Formed from incomplete combustion of carbon containing fuels. The largest source is road transport, with residential and industrial combustion making significant contributions.
+
+## Effects on health and the environment
+
+Substantially reduces capacity of the blood to carry oxygen to the body’s tissues and blocks important biochemical reactions in cells.
+
+People with existing diseases which affect delivery of oxygen to the heart or brain, such as angina, are at particular risk.
+{% endset %}
+
+{% block bodyColumn %}
+  {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

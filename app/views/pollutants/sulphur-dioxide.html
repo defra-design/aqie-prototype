@@ -1,0 +1,58 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set caption = "Causes of air pollution" %}
+{% set title = "Sulphur dioxide (SO₂)" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }, {
+      href: "/pollutants",
+      text: caption
+    }]
+  }) }}
+{% endblock %}
+
+{% set markdownContent %}
+UK emissions are dominated by combustion of fuels containing sulphur, such as coal and heavy oils by power stations and refineries. In some parts of the UK, notably Northern Ireland, coal for domestic use is a significant source.
+
+## Effects on health and the environment
+
+Causes constriction of the airways of the lung. This effect is particularly likely to occur in people suffering from asthma and chronic lung disease. Precursor to secondary PM and therefore contributes to the ill-health effects caused by PM10 and PM2.5.
+
+Potential damage to ecosystems at high levels, including degradation of chlorophyll, reduced photosynthesis, raised respiration rates and changes in protein metabolism. Deposition of pollution derived from SO2 emissions contribute to acidification of soils and waters and subsequent loss of biodiversity, often at locations far removed from the original emissions.
+
+Ground level ozone can also cause damage to many plant species leading to loss of yield and quality of crops, damage to forests and impacts on biodiversity.
+{% endset %}
+
+{% block bodyColumn %}
+  {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air quality information",
+        href: "/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

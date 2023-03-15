@@ -1,0 +1,7 @@
+<p class="app-action-link app-action-link--{{ params.type | default("arrow") }}{{ " app-action-link--small-icon" if params.size == "small" }}">
+  <span class="app-action-link__link-wrapper">
+    <a class="govuk-link app-action-link__link" href="{{ params.href }}">
+      {{ params.text }}
+    </a>
+  </span>
+</p>
