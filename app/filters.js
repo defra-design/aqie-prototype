@@ -102,3 +102,20 @@ addFilter('toFixed', (number, digits = 2) => {
 addFilter('pollutantName', (string) => {
   return pollutants.find(p => p.id === string).name
 })
+
+/**
+ * Prepend article to a word
+ *
+ * @param {string} string - Word, i.e. ‘urban’
+ * @returns {string} Word prepended with correct article, i.e. ‘an urban’
+ */
+addFilter('prependArticle', (string) => {
+  const vowels = 'aeiou'
+  const firstLetter = string[0].toLowerCase()
+
+  if (vowels.indexOf(firstLetter) > -1) {
+    return 'an ' + string
+  } else {
+    return 'A ' + string
+  }
+})

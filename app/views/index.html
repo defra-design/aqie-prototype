@@ -3,7 +3,7 @@
 {% set hasSidebarColumn = true %}
 {% set pageHeadingSize = "xl" %}
 {% set startPage = true %}
-{% set title = "Get air quality information" %}
+{% set title = serviceName %}
 
 {% block beforeContent %}
   {{ govukBreadcrumbs({
@@ -21,12 +21,12 @@
 {% endblock %}
 
 {% block bodyColumn %}
-  <p>Use this service to:</p>
+  <p>You can use this service to:</p>
 
   <ul class="govuk-list govuk-list--bullet">
+    <li>learn about air quality in your local area</li>
     <li>check the risk to your health from local air pollution</li>
-    <li>compare air quality across the UK</li>
-    <li>see how you local council is improving air quality</li>
+    <li>see how your local council is improving air quality</li>
     <li>find out if you live in a smoke control area</li>
   </ul>
 

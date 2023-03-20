@@ -1,0 +1,30 @@
+{% extends "layouts/summary.html" %}
+
+{% set title = "Outcomes" %}
+{% set section = "outcomes" %}
+
+{% block bodyColumn %}
+{% set markdownContent %}
+There have been improvements in air quality in {{ location.name }} over the last decade.
+
+![](/public/images/chart.svg)
+
+Levels of nitrogen dioxide (NO2) have decreased at some monitoring sites in the city. This could be due to a number of factors, including the introduction of cleaner vehicles and changes in transport policies.
+
+In 2020, {{ council.name }} declared a climate emergency and committed to achieving net-zero carbon emissions by 2030.
+
+The council’s initiatives to promote sustainable transport and reduce emissions from businesses will play an important role in achieving this goal.
+
+<h3 class="govuk-heading-m">Annual status reports</p>
+{% for asr in asrs %}
+  {{ appAttachment({
+    headingLevel: 4,
+    title: asr.title,
+    href: asr.href,
+    size: asr.size,
+    pages: asr.pages
+  }) }}
+{% endfor %}
+{% endset %}
+{{ markdownContent | govukMarkdown | safe }}
+{% endblock %}

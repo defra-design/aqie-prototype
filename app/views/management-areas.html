@@ -2,11 +2,19 @@
 
 {% set title = "Management areas" %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }]
+  }) }}
+{% endblock %}
+
 {% block bodyColumn %}
-  {% for la, laqm in laqms %}
-    <h2 class="govuk-heading-m">{{ la }}</h2>
-    <ul class="govuk-list govuk-list--spaced">{% for area in laqm %}
-      <li><a href="/management-areas/1">{{ area.name }}</a></li>
-    {% endfor %}</ul>
-  {% endfor %}
+  <h2 class="govuk-heading-m">{{ la }}</h2>
+  <ul class="govuk-list govuk-list--spaced">{% for laqm in laqms %}
+    <li><a href="/management-areas/{{ laqm.id }}">{{ laqm.name }}</a></li>
+  {% endfor %}</ul>
 {% endblock %}

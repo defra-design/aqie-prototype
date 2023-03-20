@@ -89,7 +89,7 @@ module.exports = [{
       type: 'no2',
       range: 'Annual Mean'
     }],
-    source: 'County or Unitary Authority Road',
+    source: 'County or Unitary Authority Road'
   }]
 }, {
   id: 6,
@@ -202,5 +202,91 @@ module.exports = [{
       range: 'Annual Mean'
     }],
     source: 'County or Unitary Authority Road'
+  }]
+},
+// Edinburgh City Council S12000036
+{
+  id: 12,
+  gss: 'S12000036',
+  name: 'Edinburgh (City Centre)',
+  events: [{
+    date: '2015-09-07',
+    description: 'Extended to include Angle Park Terrace and Clerk Street/Nicolson Street areas.',
+    filename: 'central-aqma.jpg',
+    pollutants: [{
+      type: 'no2',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
+  }]
+}, {
+  id: 13,
+  gss: 'S12000036',
+  name: 'Edinburgh (St. Johns Road)',
+  events: [{
+    date: '2009-03-09',
+    description: 'An area encompassing St Johns Road Edinburgh from just east of the junction with the B701 to just east of the junction with Kaimes Road.',
+    filename: '2084_2_Edingburgh-St-John-AQMA.png',
+    pollutants: [{
+      type: 'no2',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
+  }]
+}, {
+  id: 14,
+  gss: 'S12000036',
+  name: 'Edinburgh (Great Junction Street)',
+  events: [{
+    date: '2013-04-26',
+    description: 'Part of Ferry Road, Edinburgh extending in length to 120 metres, which includes its junction with Great Junction Street, Edinburgh and extending down the length of Great Junction Street 720 metres to its junction with Constitution Street.',
+    filename: '2083_Edingburgh-Great-Junction-AQMA.png',
+    pollutants: [{
+      type: 'no2',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
+  }]
+}, {
+  id: 15,
+  gss: 'S12000036',
+  name: 'Edinburgh (Glasgow Road)',
+  events: [{
+    date: '2013-04-26',
+    description: 'The section of the A8 Glasgow Road from Newbridge Roundabout extending east for 915m.',
+    filename: 'glasgow-road.jpg',
+    pollutants: [{
+      type: 'no2',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
+  }]
+}, {
+  id: 16,
+  gss: 'S12000036',
+  name: 'Edinburgh (Inverleith Row)',
+  events: [{
+    date: '2013-04-26',
+    description: 'The road comprising the junction of Ferry Road and Inverleith Row, that part of Ferry Road extending west from the junction for 76 metres to and including the junction with Inverleith Avenue, the section of Ferry Road extending eastward from the junction for a distance of 112 metres to beyond the junction with Monmouth Terrace and the section of Inverleith Row extending South from that junction to and including its junction with Goldenacre Terrace.',
+    filename: 'inverleith-row.jpg',
+    pollutants: [{
+      type: 'no2',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
+  }]
+}, {
+  id: 17,
+  gss: 'S12000036',
+  name: 'Edinburgh (Salamander Street)',
+  events: [{
+    date: '2017-01-20',
+    description: 'A section of the A199 including Salamander Street, Baltic Street, Bernard Street, and part of Seafield Road; an area to the north east as far as the East Sands of Leith and south of Baltic Street, extending to Queen Charlotte Street and Links Place.',
+    filename: 'inverleith-row.jpg',
+    pollutants: [{
+      type: 'pm10',
+      range: 'Annual Mean'
+    }],
+    source: 'Road transport unspecified'
   }]
 }]

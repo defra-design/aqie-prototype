@@ -1,0 +1,27 @@
+{% extends "layouts/summary.html" %}
+
+{% set title = "Smoke control area" %}
+{% set section = "smoke" %}
+
+{% block bodyColumn %}
+{% set markdownContent %}
+Smoke control areas aim to reduce the amount of harmful pollutants in the air.
+
+{{ govukInsetText({
+  text: location.postcode + " lies within a smoke control area."
+}) }}
+
+{% if council.country_name == "England" %}
+In England you may have to pay a penalty of up to £300 if your local council decides your chimney releases too much smoke.
+{% endif %}
+
+You can be fined up to £1,000 if you burn unauthorised fuel without an exempt applicance.
+
+{{ appActionLink({
+  text: "Learn more about smoke control areas",
+  href: "https://www.gov.uk/smoke-control-area-rules",
+  size: "small"
+}) }}
+{% endset %}
+{{ markdownContent | govukMarkdown | safe }}
+{% endblock %}

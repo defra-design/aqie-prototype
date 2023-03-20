@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#F3F2F1" d="M50 333h720v2H50zm0-80h720v2H50zm0-80h720v2H50zm0-80h720v2H50zm0-80h720v2H50zm0 481h720v2H50zm0-81h720v2H50z" />
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="30" y="495">0</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="20" y="415">20</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="19" y="335">40</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="20" y="255">60</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="20" y="175">80</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="14" y="95">100</tspan>
+    </text>
+    <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="16" transform="translate(0 4)">
+      <tspan x="14" y="15">120</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 4)">
+      <tspan x="50" y="528">2011</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 4)">
+      <tspan x="110" y="528">2012</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 4)">
+      <tspan x="170" y="528">2013</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 4)">
+      <tspan x="230" y="528">2014</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 4)">
+      <tspan x="290" y="528">2015</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="350" y="528">2016</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="410" y="528">2017</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="470" y="528">2018</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="530" y="528">2019</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="590" y="528">2020</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="650" y="528">2021</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="19"
+      transform="translate(0 4)">
+      <tspan x="710" y="528">2022</tspan>
+    </text>
+    <path stroke="#F47738" stroke-width="4"
+      d="m50 93 60-53 60 55 60 60 60 60 60 60 60 59 60 8 60 7 60 18 60 23 60 15 60 10" />
+    <path stroke="#912B88" stroke-width="4"
+      d="m50 93 60-13 60 15 60 20 60 40 60 30 60 29 60 18 60-3 60 28 60 13 60 15h60" />
+    <path stroke="#6F72AF" stroke-width="4"
+      d="m50 93 60 7 60 15 60 10 60 10h60l60 9 60-2 60-13 60 8 60 23 60 5 60 10" />
+    <path stroke="#28A197" stroke-width="4" d="m50 93 60 3 60 6 60 4 60 4h60l60 4 60-11 60 5 60 3 60 39 60-28 60-6" />
+    <path stroke="#4C2C92" stroke-width="4"
+      d="m50 93 60-27 60 6 60 14 60 14h60l60 4 60-11 60 25 60-17 60 39 60-28 60-16" />
+    <path stroke="#85994B" stroke-width="4" d="m50 93 60-27 60 6 60 20 60-12h60l60 4 60-1 60 5 60 3 60-1 60 2 60-6" />
+    <text fill="#F47738" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="422">Sulphur dioxide</tspan>
+    </text>
+    <text fill="#912B88" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="292">Nitrogen oxides</tspan>
+    </text>
+    <text fill="#6F72AF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="182">NMVOCs</tspan>
+    </text>
+    <text fill="#28A197" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="122">PM2.5</tspan>
+    </text>
+    <text fill="#4C2C92" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="102">PM10</tspan>
+    </text>
+    <text fill="#85994B" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="780" y="82">Ammonia</tspan>
+    </text>
+  </g>
+</svg>

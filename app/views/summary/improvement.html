@@ -1,0 +1,48 @@
+{% extends "layouts/summary.html" %}
+
+{% set title = "Improving local air quality" %}
+{% set section = "improvement" %}
+
+{% block bodyColumn %}
+{% set markdownContent %}
+Local councils and the Department for Environment, Food and Rural Affairs (Defra) have responsibility for for improving air quality in the UK.
+
+Local councils are responsible for for implementing [measures that can be implemented at the local level](#), while Defra sets national policies and provides support and guidance to local councils and other organisations.
+
+### Air Quality Action Plan
+
+{{ appAttachment({
+  headingLevel: 4,
+  title: aqap.title,
+  href: aqap.href,
+  size: aqap.size,
+  pages: aqap.pages
+}) }}
+
+### Current initiatives
+
+{{ council.name }} has implemented the following initiatives:
+
+* #### Encouraging the use of public transport
+  Promoting the use of public transport, including buses and trains, to reduce the number of cars on the road.
+
+* #### Promoting cycling and walking
+  Introduced measures to make it easier for people to cycle and walk around the city. This includes the creation of new cycle lanes and the introduction of pedestrian zones in some areas.
+
+* #### Introducing low emission zones
+  Introduced low-emission zones in some parts of the city to restrict the most polluting vehicles from entering.
+
+* #### Supporting businesses to reduce emissions
+  Launched a business engagement program to help local businesses reduce their emissions, including offering advice on sustainable transport options and energy efficiency measures.
+
+### Planned initiatives
+
+{{ council.name }} is consulting on the following initiatives:
+
+* #### Implementing a clean air zone
+  The council plans to introduce a clean air zone in the city centre, which would charge drivers of high-polluting vehicles to enter.
+
+  [This consultation is open until 14 April 2023](#).
+{% endset %}
+{{ markdownContent | govukMarkdown | safe }}
+{% endblock %}

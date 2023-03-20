@@ -13,15 +13,16 @@
   }) if error }}
 
   {{ govukInput({
-    classes: "govuk-input--width-20",
+    classes: "govuk-input--width-10",
     label: {
-      text: "Get the air quality for your location",
+      text: "Enter a postcode",
       classes: "govuk-label--l",
       isPageHeading: true
     },
     hint: {
-      text: "Enter a postcode, for example ‘SW1A 2AA’"
+      text: "For example ‘SW1A 2AA’"
     },
+    autocomplete: "postal-code",
     errorMessage: {
       text: "Enter a valid postcode"
     } if error,

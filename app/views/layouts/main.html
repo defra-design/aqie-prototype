@@ -1,7 +1,7 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "components/action-link/macro.njk" import appActionLink %}
+{% from "components/attachment/macro.njk" import appAttachment %}
 {% from "components/cards/macro.njk" import appCards %}
-{% from "components/forecast/macro.njk" import appForecast %}
 {% from "components/search/macro.njk" import appSearch %}
 
 {% if startPage === true %}
@@ -44,13 +44,3 @@ GOV.UK
     text: "Clear data"
   }] %}
 {% endif %}
-
-{% block footer %}
-  {{ govukFooter({
-    meta: {
-      html: "Forecasts provided by the <a href=\"https://www.metoffice.gov.uk\" class=\"govuk-footer__link\">Met Office</a>",
-      items: footerItems,
-      visuallyHiddenTitle: "Footer links"
-    }
-  }) }}
-{% endblock %}

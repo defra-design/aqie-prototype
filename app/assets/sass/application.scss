@@ -10,8 +10,8 @@ $daqi-colour-4: govuk-colour("yellow");
 $daqi-colour-5: mix(govuk-colour("yellow"), govuk-colour("orange"), 50%);
 $daqi-colour-6: govuk-colour("orange");
 $daqi-colour-7: govuk-colour("red");
-$daqi-colour-8: mix(govuk-colour("red"), govuk-colour("black"), 25%);
-$daqi-colour-9: mix(govuk-colour("red"), govuk-colour("black"), 50%);
+$daqi-colour-8: mix(govuk-colour("red"), govuk-colour("black"), 50%);
+$daqi-colour-9: mix(govuk-colour("red"), govuk-colour("black"), 25%);
 $daqi-colour-10: govuk-colour("black");
 
 @import "./govspeak";
@@ -22,17 +22,6 @@ $daqi-colour-10: govuk-colour("black");
 // Base
 sub, sup {
   line-height: 0;
-}
-
-// Action
-.app-action {
-  align-items: center;
-  display: flex;
-  gap: govuk-spacing(1);
-
-  a {
-    font-weight: bold;
-  }
 }
 
 // List - column
@@ -47,48 +36,7 @@ sub, sup {
   }
 }
 
-// Inset text
-.app-inset-text--alert {
-  background-color: govuk-colour("light-grey");
-}
-
-// Panel
-.app-panel--daqi {
-  @include govuk-media-query($from: tablet) {
-    padding: govuk-spacing(5) - $govuk-border-width;
-  }
-
-  .govuk-panel__title {
-    @include govuk-font($size: 24, $weight: bold);
-    margin-bottom: govuk-spacing(1);
-  }
-
-  .govuk-panel__body {
-    @include govuk-font($size:48, $weight: bold);
-  }
-}
-
-// Section
-.app-section {
-  padding: 20px 0 30px;
-}
-
-.app-section__heading {
-  border-top: 2px solid govuk-colour("black");
-  margin: 0 0 govuk-spacing(6);
-  padding: govuk-spacing(3) 0 0;
-}
-
-// Summary list
-.app-summary-list--uk-summary {
-  .govuk-summary-list__key {
-    @include govuk-media-query($from: tablet) {
-      width: 20%;
-    }
-  }
-}
-
-// Table
+// Table - DAQI
 .app-table--daqi {
   border-spacing: 2px;
   border-collapse: separate;
@@ -111,9 +59,12 @@ sub, sup {
   }
 }
 
+// Table - Forecast/Measurement
 .app-table--forecast {
   border-spacing: govuk-spacing(1);
   border-collapse: separate;
+  margin-bottom: govuk-spacing(2);
+  margin-top: govuk-spacing(9);
 
   .govuk-table__caption {
     padding-top: govuk-spacing(2);
@@ -144,104 +95,73 @@ sub, sup {
   }
 }
 
-// DAQI colors (vivid)
-.daqi-1 {
-  background-color: $daqi-colour-1;
-  color: govuk-colour("white");
+// Masthead
+.app-masthead {
+  background-color: #263135;
+
+  .govuk-breadcrumbs {
+    padding-top: govuk-spacing(3);
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .govuk-phase-banner {
+    padding-top: govuk-spacing(4);
+    border-bottom-color: govuk-colour("dark-grey");
+  }
+
+  .govuk-tag {
+    color: #263135
+  }
 }
 
-.daqi-2 {
-  background-color: $daqi-colour-2;
-  color: govuk-colour("white");
+// DAQI colors
+.app-daqi--1 {
+  background: govuk-tint($daqi-colour-1, 80%);
+  color: govuk-shade($daqi-colour-1, 60%);
 }
 
-.daqi-3 {
-  background-color: $daqi-colour-3;
-  color: govuk-colour("white");
-}
-
-.daqi-4 {
-  background-color: $daqi-colour-4;
-  color: govuk-colour("black");
-}
-
-.daqi-5 {
-  background-color: $daqi-colour-5;
-  color: govuk-colour("black");
-}
-
-.daqi-6 {
-  background-color: $daqi-colour-6;
-  color: govuk-colour("white");
-}
-
-.daqi-7 {
-  background-color: $daqi-colour-7;
-  color: govuk-colour("white");
-}
-
-.daqi-8 {
-  background-color: $daqi-colour-8;
-  color: govuk-colour("white");
-}
-
-.daqi-9 {
-  background-color: $daqi-colour-9;
-  color: govuk-colour("white");
-}
-
-.daqi-10 {
-  background-color: $daqi-colour-10;
-  color: govuk-colour("white");
-}
-
-// DAQI colors (pastel)
-.app-tag--daqi-1 {
-  background: govuk-tint($daqi-colour-1, 70%);
-  color: govuk-shade($daqi-colour-1, 50%);
-}
-
-.app-tag--daqi-2 {
+.app-daqi--2 {
   background: govuk-tint($daqi-colour-2, 75%);
-  color: govuk-shade($daqi-colour-2, 35%);
+  color: govuk-shade($daqi-colour-2, 45%);
 }
 
-.app-tag--daqi-3 {
-  background: govuk-tint($daqi-colour-3, 80%);
-  color: govuk-shade($daqi-colour-3, 20%);
+.app-daqi--3 {
+  background: govuk-tint($daqi-colour-3, 70%);
+  color: govuk-shade($daqi-colour-3, 30%);
 }
 
-.app-tag--daqi-4 {
+.app-daqi--4 {
   background: govuk-tint($daqi-colour-4, 75%);
   color: govuk-shade($daqi-colour-4, 65%);
 }
 
-.app-tag--daqi-5 {
+.app-daqi--5 {
   background: govuk-tint($daqi-colour-5, 72.5%);
   color: govuk-shade($daqi-colour-5, 60%);
 }
 
-.app-tag--daqi-6 {
+.app-daqi--6 {
   background: govuk-tint($daqi-colour-6, 70%);
   color: govuk-shade($daqi-colour-6, 55%);
 }
 
-.app-tag--daqi-7 {
-  background: govuk-tint($daqi-colour-7, 80%);
+.app-daqi--7 {
+  background: govuk-tint($daqi-colour-7, 70%);
   color: govuk-shade($daqi-colour-7, 30%);
 }
 
-.app-tag--daqi-8 {
-  background: govuk-tint($daqi-colour-8, 83.33%);
+.app-daqi--8 {
+  background: govuk-tint($daqi-colour-8, 70%);
   color: govuk-shade($daqi-colour-8, 30%);
 }
 
-.app-tag--daqi-9 {
-  background: govuk-tint($daqi-colour-9, 86.67%);
+.app-daqi--9 {
+  background: govuk-tint($daqi-colour-9, 70%);
   color: govuk-shade($daqi-colour-9, 30%);
 }
 
-.app-tag--daqi-10 {
-  background: govuk-tint($daqi-colour-10, 90%);
-  color: govuk-shade($daqi-colour-10, 30%);
+.app-daqi--10 {
+  background-color: $daqi-colour-10;
+  color: govuk-colour("white");
 }

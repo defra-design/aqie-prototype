@@ -4,6 +4,16 @@
 {% set pageHeadingSize = "xl" %}
 {% set title = "Daily air quality index" %}
 
+{% block beforeContent %}
+  {{ super() }}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/home",
+      text: "Home"
+    }]
+  }) }}
+{% endblock %}
+
 {% block bodyColumn %}
   <p>The Daily Air Quality Index (DAQI) tells you about levels of air pollution and provides recommended actions and health advice.</p>
 
