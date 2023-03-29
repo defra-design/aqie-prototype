@@ -1,5 +1,4 @@
 const postcode = require('postcode')
-const forecasts = require('../data/forecasts.js')
 const managementAreas = require('../data/management-areas.js')
 const ruc11 = require('../data/ruc11.js')
 const { getPoint } = require('../services/boundaries.js')

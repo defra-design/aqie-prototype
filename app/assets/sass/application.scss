@@ -20,7 +20,8 @@ $daqi-colour-10: govuk-colour("black");
 @import "../../views/components/all";
 
 // Base
-sub, sup {
+sub,
+sup {
   line-height: 0;
 }
 
@@ -111,7 +112,7 @@ sub, sup {
   }
 
   .govuk-tag {
-    color: #263135
+    color: #263135;
   }
 }
 

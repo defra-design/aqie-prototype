@@ -1,24 +1,38 @@
 {
   "scripts": {
+    "predev": "rollup -c rollup.config.mjs",
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "lint": "standard"
+    "lint": "standard && stylelint '**/*.scss'"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "^1.0.0",
     "@ministryofjustice/frontend": "^1.6.0",
     "@x-govuk/govuk-prototype-components": "^2.0.0",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "govuk-frontend": "^4.4.1",
     "govuk-prototype-filters": "^0.1.0",
     "govuk-prototype-kit": "^13.2.1",
     "luxon": "^3.2.1",
-    "postcode": "^5.1.0"
+    "ol": "^7.3.0",
+    "postcode": "^5.1.0",
+    "proj4": "^2.9.0",
+    "rollup": "^3.20.2"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "dotenv": "^16.0.3",
+    "standard": "^17.0.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-gds": "^0.2.0"
   },
   "engines": {
     "node": ">=18"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-gds/scss"
   }
 }

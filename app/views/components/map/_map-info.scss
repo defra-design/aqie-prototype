@@ -1,0 +1,72 @@
+.app-map-info {
+  z-index: 4;
+  padding: 15px;
+
+  &__content dd {
+    margin: 0;
+  }
+
+  &__name {
+    @include govuk-font($size: 19, $weight: bold);
+    display: block;
+    margin: 0;
+
+    a {
+      color: $govuk-text-colour;
+    }
+  }
+
+  &__name-subtitle {
+    @include govuk-font($size: 16);
+  }
+
+  &__name--emphasis {
+    font-weight: bold;
+  }
+
+  &__description {
+    @extend .govuk-body;
+    margin-bottom: 0;
+    margin-top: 10;
+  }
+
+  &__error {
+    @include govuk-font($size: 16);
+    display: block;
+    margin-bottom: 0;
+    margin-top: 10;
+  }
+
+  &__meta {
+    @include govuk-font($size: 16);
+    display: block;
+    margin-top: 10;
+    margin-bottom: 0;
+    color: $govuk-secondary-text-colour;
+  }
+
+  &__buttons {
+    margin: 15px -51px 0 -15px;
+    padding: 0 govuk-spacing(3);
+
+    button {
+      padding-left: 26px;
+    }
+
+    button svg {
+      left: 6px;
+      margin-top: -10;
+    }
+  }
+
+  // Attributions
+  ul {
+    @extend .govuk-list;
+    @include govuk-font($size: 14);
+    margin-bottom: 0;
+  }
+
+  ul > li {
+    margin-bottom: 0;
+  }
+}

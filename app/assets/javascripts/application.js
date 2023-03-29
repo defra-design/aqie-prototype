@@ -1,8 +1,15 @@
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
+import { createMap } from './map/create.js'
+import { maps } from './map/maps.js'
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
+  window.maps = maps
+
+  if (document.getElementById('demo')) {
+    createMap('demo', {
+      btnText: 'View demo map',
+      btnClasses: 'govuk-button--secondary',
+      extent: [-1.582729, 53.793997, -1.56612, 53.807566],
+      layer: 'ae1'
+    })
+  }
 })
