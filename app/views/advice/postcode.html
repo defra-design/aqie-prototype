@@ -1,0 +1,18 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "What is the first part of your postcode?" %}
+
+{% block question %}
+  {{ govukInput({
+    classes: "govuk-input--width-5",
+    name: "postcode",
+    label: {
+      classes: "govuk-label--l",
+      isPageHeading: true,
+      text: title
+    },
+    hint: {
+      text: "For example ‘SW1A’ or ‘B12’."
+    }
+  }) }}
+{% endblock %}

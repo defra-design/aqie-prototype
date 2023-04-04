@@ -1,0 +1,23 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "Do you or anyone in your household smoke?" %}
+
+{% block question %}
+  {{ govukRadios({
+    name: "smoking",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true,
+        text: title
+      }
+    },
+    items: [{
+      value: "yes",
+      text: "Yes"
+    }, {
+      value: "no",
+      text: "No"
+    }]
+  }) }}
+{% endblock %}

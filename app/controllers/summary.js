@@ -1,8 +1,7 @@
 const postcode = require('postcode')
-const forecasts = require('../data/forecasts.js')
 const managementAreas = require('../data/management-areas.js')
 const ruc11 = require('../data/ruc11.js')
-const { getPoint } = require('../services/boundaries.js')
+const { getAreas } = require('../services/boundaries.js')
 const { getWeather } = require('../services/weather.js')
 
 exports.get = async (req, res) => {
@@ -52,7 +51,7 @@ exports.get = async (req, res) => {
   }]
 
   // Get local boundaries
-  const mapitLocation = await getPoint(location.lat, location.lon)
+  const mapitLocation = await getAreas(location.lat, location.lon)
   const mapitBoundaries = Object.values(mapitLocation)
 
   // Get local council for given area

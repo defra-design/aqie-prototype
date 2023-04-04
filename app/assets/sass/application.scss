@@ -24,6 +24,75 @@ sub, sup {
   line-height: 0;
 }
 
+// Accordion
+.app-accordion--action-plan {
+  .govuk-accordion__section-heading-text,
+  .govuk-accordion__section-summary-focus,
+  .govuk-accordion__section-content {
+    width: 67%;
+  }
+
+  .govuk-accordion__section-summary-focus {
+    display: block !important;
+  }
+
+  .govuk-accordion__section-summary {
+    @include govuk-font($size: 24, $weight: regular);
+  }
+
+  .govuk-accordion__section-button {
+    background-position: top govuk-spacing(4) right govuk-spacing(2);
+    background-repeat: no-repeat;
+    background-size: 10rem;
+    min-height: 10rem;
+
+    &[aria-controls="actions-content-1"] {
+      background-image: url("/public/images/advice-health.svg");
+    }
+
+    &[aria-controls="actions-content-2"] {
+      background-image: url("/public/images/advice-home.svg");
+    }
+
+    &[aria-controls="actions-content-3"] {
+      background-image: url("/public/images/advice-delivery.svg");
+    }
+
+    &[aria-controls="actions-content-4"] {
+      background-image: url("/public/images/advice-commuting.svg");
+    }
+
+    &[aria-controls="actions-content-5"] {
+      background-image: url("/public/images/advice-driving.svg");
+    }
+
+    &[aria-controls="actions-content-6"] {
+      background-image: url("/public/images/advice-exercise.svg");
+    }
+  }
+
+  .js-enabled & {
+    .govuk-accordion__section-button:hover {
+      background-position: top govuk-spacing(4) right govuk-spacing(2);
+      background-repeat: no-repeat;
+      background-size: 10rem;
+      min-height: 10rem;
+    }
+  }
+}
+
+// Header
+.app-header {
+  .govuk-header__logo {
+    width: 50%;
+  }
+
+  .govuk-header__content {
+    float: right;
+    width: 25%;
+  }
+}
+
 // List - column
 .app-list--column {
   display: flex;

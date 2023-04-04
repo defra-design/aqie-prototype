@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block content %}
-  <form class="govuk-grid-row" action="{{ formAction | default("/") }}">
+  <form class="govuk-grid-row" method="post">
     <div class="govuk-grid-column-two-thirds">
       {% block form %}
       {% endblock %}

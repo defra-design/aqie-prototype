@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <form class="govuk-grid-row" method="post" novalidate>
+    <div class="govuk-grid-column-two-thirds">
+      {% block question %}{% endblock %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <a class="govuk-link" href="{{ paths.next }}">Skip this question</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

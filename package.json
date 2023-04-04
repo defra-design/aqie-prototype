@@ -12,6 +12,7 @@
     "govuk-frontend": "^4.4.1",
     "govuk-prototype-filters": "^0.1.0",
     "govuk-prototype-kit": "^13.2.1",
+    "govuk-prototype-wizard": "^0.2.0",
     "luxon": "^3.2.1",
     "postcode": "^5.1.0"
   },

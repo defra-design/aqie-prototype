@@ -4,11 +4,16 @@
 //
 
 const govukPrototypeKit = require('govuk-prototype-kit')
+const adviceController = require('./controllers/advice.js')
 const homeController = require('./controllers/home.js')
 const managementAreaController = require('./controllers/management-area.js')
 const summaryController = require('./controllers/summary.js')
 
 const router = govukPrototypeKit.requests.setupRouter()
+
+// Advice journey
+router.all('/advice/:view?', adviceController.all)
+router.post('/advice/:view?', adviceController.post)
 
 // Home page
 router.get('/home', homeController.get)

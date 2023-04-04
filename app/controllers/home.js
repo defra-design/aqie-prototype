@@ -17,5 +17,5 @@ exports.get = async (req, res) => {
     ...{ regions }
   }
 
-  res.render('home')
+  res.render('index')
 }

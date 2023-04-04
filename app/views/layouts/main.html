@@ -1,12 +1,9 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "components/action-link/macro.njk" import appActionLink %}
+{% from "components/action-list/macro.njk" import appActionList %}
 {% from "components/attachment/macro.njk" import appAttachment %}
 {% from "components/cards/macro.njk" import appCards %}
 {% from "components/search/macro.njk" import appSearch %}
-
-{% if startPage === true %}
-{% set serviceName = false %}
-{% endif %}
 
 {% set bodyAttributes = {
   "data-module": "edge"
@@ -14,20 +11,70 @@
 
 {% block pageTitle %}
 {% if title %}{{ title }} – {% endif %}
-{% if not startPage %}{{ serviceName }} – {% endif %}
-GOV.UK
+{{ serviceName }} – GOV.UK
 {% endblock %}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
+{% block header %}
+  {{ govukHeader({
+    classes: "app-header",
+    homepageUrl: "/",
+    productName: serviceName,
+    navigationClasses: "govuk-header__navigation--end",
+    navigation: [{
+      href: "#",
+      text: "5 day air quality forecast"
+    }]
+  }) }}
+{% endblock %}
+
+{% block main %}
+  {# govukPhaseBanner({
     classes: "govuk-width-container",
     tag: {
       text: "Prototype"
     },
     text: "This is a prototype of a new service. Some parts may not work yet."
-  }) if not startPage }}
+  }) #}
+
+  {{ xGovukPrimaryNavigation({
+    visuallyHiddenTitle: "Navigation",
+    items: [{
+      text: "Air pollution",
+      href: "#"
+    }, {
+      text: "Health affects",
+      href: "#"
+    }, {
+      text: "Inside your home",
+      href: "#"
+    }, {
+      text: "On your street",
+      href: "#"
+    }, {
+      text: "In your local area",
+      href: "#"
+    }, {
+      text: "Across the UK",
+      href: "#"
+    }]
+  }) }}
+
+  {{ xGovukMasthead({
+    classes: "x-govuk-masthead--large govuk-!-margin-top-0",
+    title: {
+      text: "Poor air quality affects us all"
+    },
+    description: {
+      html: "Find out how you improve the air quality around you and what you can do to reduce your contribution."
+    },
+    startButton: {
+      href: "/advice/"
+    }
+  }) if homepage }}
+
+  {{ super() }}
 {% endblock %}
 
 {% if (GOVUKPrototypeKit.isDevelopment) %}

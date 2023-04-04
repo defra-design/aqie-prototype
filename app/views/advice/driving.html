@@ -1,0 +1,23 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "Do you drive?" %}
+
+{% block question %}
+  {{ govukRadios({
+    name: "driving",
+    fieldset: {
+      legend: {
+        text: title,
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [{
+      value: "yes",
+      text: "Yes"
+    }, {
+      value: "no",
+      text: "No"
+    }]
+  }) }}
+{% endblock %}

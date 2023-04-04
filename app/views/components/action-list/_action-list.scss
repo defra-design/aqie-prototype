@@ -1,0 +1,16 @@
+.app-action-list__item {
+  @include govuk-font(19, $weight: normal);
+  display: table;
+  list-style: none;
+  margin-bottom: govuk-spacing(4);
+
+  &:before {
+    background-image: url("/public/images/action-link-arrow.svg");
+    background-size: govuk-spacing(4) auto;
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    content: "";
+    display: table-cell;
+    width: govuk-spacing(5);
+  }
+}

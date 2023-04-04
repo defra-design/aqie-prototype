@@ -1,62 +1,34 @@
 {% extends "layouts/content.html" %}
 
-{% set hasSidebarColumn = true %}
-{% set pageHeadingSize = "xl" %}
-{% set startPage = true %}
-{% set title = serviceName %}
+{% set homepage = true %}
 
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
+{% block content %}
+  {{ appCards({
+    heading: "Topics",
     items: [{
-      href: "https://www.gov.uk",
-      text: "Home"
+      href: "#",
+      text: "Air pollution",
+      description: "Learn about the nature of air pollution, its sources, and the extent of its impact."
     }, {
-      href: "https://www.gov.uk/environment",
-      text: "Environment"
+      href: "#",
+      text: "Health affects",
+      description: "Air pollution can affect our health throughout our lives. Find out about the main health impacts for you, your children and all of your family."
     }, {
-      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
-      text: "Pollution and environmental quality"
-    }]
-  }) }}
-{% endblock %}
-
-{% block bodyColumn %}
-  <p>You can use this service to:</p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>learn about air quality in your local area</li>
-    <li>check the risk to your health from local air pollution</li>
-    <li>see how your local council is improving air quality</li>
-    <li>find out if you live in a smoke control area</li>
-  </ul>
-
-  {{ govukButton({
-    text: "Start now",
-    href: "/home",
-    isStartButton: true
-  }) }}
-{% endblock %}
-
-{% block sidebarColumn %}
-  {{ xGovukRelatedNavigation({
-    sections: [{
-      items: [{
-        text: "Daily air quality index",
-        href: "/guidance/daily-air-quality-index"
-      }],
-      subsections: [{
-        title: "Pollution and environmental quality",
-        items: [{
-          text: "Clean Air Strategy 2019",
-          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
-        }, {
-          text: "Clean air zones",
-          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
-        }, {
-          text: "Air quality statistics",
-          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
-        }]
-      }]
+      href: "#",
+      text: "Inside the home",
+      description: "Many homes have poor air quality due to factors like high humidity, allergens, and pollutants from sources like cooking and cleaning."
+    }, {
+      href: "#",
+      text: "On your street",
+      description: "A network of approximately 171 monitors is used to measuring concentrations of key pollutants."
+    }, {
+      href: "#",
+      text: "In your local area",
+      description: "Knowing more about the air pollution in your area can help you to make decisions on how to reduce your exposure."
+    }, {
+      href: "#",
+      text: "Across the UK",
+      description: "Burning solid fuels releases harmful pollutants straight into the home as well as into the air outside."
     }]
   }) }}
 {% endblock %}
