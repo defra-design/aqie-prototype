@@ -3,7 +3,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     href: paths.back
-  }) }}
+  }) if paths.back }}
 {% endblock %}
 
 {% block content %}
@@ -13,10 +13,12 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue"
+          text: buttonText or "Continue"
         }) }}
 
-        <a class="govuk-link" href="{{ paths.next }}">Skip this question</a>
+        {% if allowSkip -%}
+        <a class="govuk-link govuk-link--no-visited-state" href="{{ paths.next }}">Skip this question</a>
+        {%- endif %}
       </div>
     </div>
   </form>

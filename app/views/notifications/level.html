@@ -1,0 +1,27 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "At what level would you like to get air pollution alerts?" %}
+
+{% block question %}
+  {{ govukRadios({
+    name: "level",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true,
+        text: title
+      }
+    },
+    items: [{
+      value: "moderate",
+      text: "Moderate"
+    }, {
+      value: "high",
+      text: "High"
+    }, {
+      value: "very-high",
+      text: "Very high"
+    }],
+    value: data.level
+  }) }}
+{% endblock %}

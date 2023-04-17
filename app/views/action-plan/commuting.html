@@ -1,0 +1,38 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "How do you commute to work or school?" %}
+{% set allowSkip = true %}
+
+{% block question %}
+  {{ govukRadios({
+    name: "commuting",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true,
+        text: title
+      }
+    },
+    items: [{
+      value: "car-or-motorbike",
+      text: "By car or motorbike"
+    }, {
+      value: "public-transport",
+      text: "Using public transport",
+      hint: {
+        text: "For example buses, trains or trams."
+      }
+    }, {
+      value: "walk",
+      text: "Walking"
+    }, {
+      value: "wheel",
+      text: "Wheeling"
+    }, {
+      divider: "or"
+    }, {
+      value: "no",
+      text: "Work from home or are home-schooled"
+    }]
+  }) }}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "What is your email address?" %}
+
+{% block question %}
+  <h1 class="govuk-heading-l">{{ title }}</h1>
+
+  {{ govukInput({
+    id: "email",
+    name: "email",
+    label: {
+      text: "Email address"
+    },
+    value: data.email,
+    type: "email",
+    autocomplete: "email",
+    spellcheck: false
+  }) }}
+{% endblock %}

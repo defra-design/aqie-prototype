@@ -4,6 +4,7 @@
 {% from "components/attachment/macro.njk" import appAttachment %}
 {% from "components/cards/macro.njk" import appCards %}
 {% from "components/search/macro.njk" import appSearch %}
+{% from "components/section/macro.njk" import appSection %}
 
 {% set bodyAttributes = {
   "data-module": "edge"
@@ -19,12 +20,13 @@
 {% block header %}
   {{ govukHeader({
     classes: "app-header",
-    homepageUrl: "/",
-    productName: serviceName,
+    homepageUrl: "https://gov.uk",
+    serviceName: serviceName,
+    serviceUrl: "/",
     navigationClasses: "govuk-header__navigation--end",
     navigation: [{
       href: "#",
-      text: "5 day air quality forecast"
+      text: "Sign in"
     }]
   }) }}
 {% endblock %}
@@ -42,21 +44,23 @@
     visuallyHiddenTitle: "Navigation",
     items: [{
       text: "Air pollution",
-      href: "#"
+      href: "/air-pollution",
+      current: section == "air-pollution"
     }, {
-      text: "Health affects",
-      href: "#"
+      text: "Health effects",
+      href: "/health-effects",
+      current: section == "health-effects"
     }, {
-      text: "Inside your home",
-      href: "#"
-    }, {
-      text: "On your street",
+      text: "Inside the home",
       href: "#"
     }, {
       text: "In your local area",
       href: "#"
     }, {
-      text: "Across the UK",
+      text: "Forecast",
+      href: "#"
+    }, {
+      text: "Measurements",
       href: "#"
     }]
   }) }}
@@ -64,13 +68,14 @@
   {{ xGovukMasthead({
     classes: "x-govuk-masthead--large govuk-!-margin-top-0",
     title: {
-      text: "Poor air quality affects us all"
+      text: title
     },
     description: {
-      html: "Find out how you improve the air quality around you and what you can do to reduce your contribution."
+      text: description
     },
     startButton: {
-      href: "/advice/"
+      href: "/action-plan/",
+      text: "Create your air quality action plan"
     }
   }) if homepage }}
 
@@ -78,16 +83,37 @@
 {% endblock %}
 
 {% if (GOVUKPrototypeKit.isDevelopment) %}
-  {% set footerItems = [{
+  {% set footerMetaItems = [{
     href: "/manage-prototype",
     text: "Manage your prototype"
   }, {
     href: "/manage-prototype/clear-data",
     text: "Clear data"
+  }, {
+    href: "/email/pollution-alert",
+    text: "Air pollution alert email"
+  }, {
+    href: "/email/daily-summary",
+    text: "Daily summary email"
   }] %}
 {% else %}
-  {% set footerItems = [{
+  {% set footerMetaItems = [{
     href: "/manage-prototype/clear-data",
     text: "Clear data"
+  }, {
+    href: "/email/pollution-alert",
+    text: "Air pollution alert email"
+  }, {
+    href: "/email/daily-summary",
+    text: "Daily summary email"
   }] %}
 {% endif %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: footerMetaItems,
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}

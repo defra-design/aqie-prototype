@@ -1,0 +1,12 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "Check your notification settings" %}
+{% set buttonText = "Subscribe" %}
+
+{% block question %}
+  <h1 class="govuk-heading-l">{{ title }}</h1>
+
+  {% include "includes/notification-settings" %}
+
+  <p>You can change these settings or unsubscribe from notifications at any time.</p>
+{% endblock %}

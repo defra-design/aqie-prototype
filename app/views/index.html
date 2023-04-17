@@ -1,34 +1,66 @@
 {% extends "layouts/content.html" %}
 
+{% set title = "Take action on air quality" %}
+{% set description = "There’s a lot to understand about air quality and how it affects us. Use this site to learn about air pollution and what actions we can take to reduce it." %}
 {% set homepage = true %}
 
 {% block content %}
   {{ appCards({
     heading: "Topics",
     items: [{
-      href: "#",
+      href: "/air-pollution",
       text: "Air pollution",
-      description: "Learn about the nature of air pollution, its sources, and the extent of its impact."
+      image: {
+        src: "/public/images/pollution.jpg"
+      },
+      description: "There’s a lot to understand about air pollution. Learn about the nature of air pollution, its sources, and the extent of its impact."
     }, {
-      href: "#",
-      text: "Health affects",
+      href: "/health-effects",
+      text: "Health effects",
+      image: {
+        src: "/public/images/family.jpg"
+      },
       description: "Air pollution can affect our health throughout our lives. Find out about the main health impacts for you, your children and all of your family."
     }, {
       href: "#",
       text: "Inside the home",
+      image: {
+        src: "/public/images/spray.jpg"
+      },
       description: "Many homes have poor air quality due to factors like high humidity, allergens, and pollutants from sources like cooking and cleaning."
     }, {
       href: "#",
-      text: "On your street",
-      description: "A network of approximately 171 monitors is used to measuring concentrations of key pollutants."
-    }, {
-      href: "#",
       text: "In your local area",
+      image: {
+        src: "/public/images/street.jpg"
+      },
       description: "Knowing more about the air pollution in your area can help you to make decisions on how to reduce your exposure."
     }, {
       href: "#",
-      text: "Across the UK",
-      description: "Burning solid fuels releases harmful pollutants straight into the home as well as into the air outside."
+      text: "Air quality forecast",
+      image: {
+        src: "/public/images/forecast.jpg"
+      },
+      description: "Get our 5-day forecast produced by the Met Office using readings from over 170 air quality monitoring stations across the UK."
+    }, {
+      href: "#",
+      text: "Measurements",
+      image: {
+        src: "/public/images/monitor.jpg"
+      },
+      description: "Explore latest and historical measurements for the different pollutants tracked by our monitoring networks."
     }]
   }) }}
+
+  {% call appSection({
+    title: "Sign up for air quality notifications and alerts"
+  }) %}
+    <div class="govuk-!-width-two-thirds">
+      <p>Get email notifications and alerts about the air quality near you.</p>
+      {{ govukButton({
+        text: "Continue",
+        href: "/notifications/"
+      }) }}
+    </div>
+  {% endcall %}
 {% endblock %}

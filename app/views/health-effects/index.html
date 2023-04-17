@@ -1,0 +1,66 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Health effects" %}
+{% set section = "health-effects" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "/"
+    }, {
+      text: title
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter-from-desktop">
+    {{ xGovukSubNavigation({
+      visuallyHiddenTitle: "Navigation",
+      items: [{
+        text: "Introduction",
+        href: "/health-effects",
+        current: true
+      }, {
+        text: "Why is air pollution damaging to people’s health?",
+        href: "#"
+      }, {
+        text: "How does air pollution damage my children’s health?",
+        href: "#"
+      }, {
+        text: "How does air pollution affect me as an expectant mother?",
+        href: "#"
+      }, {
+        text: "How does air pollution affect the elderly?",
+        href: "#"
+      }, {
+        text: "Where can I go for advice about these health conditions and impacts?",
+        href: "#"
+      }]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-three-quarters-from-desktop">
+    <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+    <p class="govuk-body-l">Air pollution can affect our health throughout our lives.</p>
+
+    <p>Air pollution particles and gases enter our bodies and can damage our cells in different ways. They usually get into our lungs first and can then move into our blood to reach organs such as our heart and brain.</p>
+
+    <p>Any amount of pollution can be damaging to our health, but the more that you are exposed to, the bigger the risk and the larger the effect it can have on you and your family.</p>
+
+    <p>Some people are more vulnerable to the impacts of air pollution than others. Those more at risk from air pollution include:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Children</li>
+      <li>Pregnant people</li>
+      <li>Older people</li>
+      <li>People with lung conditions, for example asthma, chronic obstructive pulmonary disease (COPD) and lung cancer</li>
+      <li>People with heart conditions, for example coronary artery disease, heart failure and high blood pressure.</li>
+    </ul>
+
+    <p>There are things we can all do to protect our health from air pollution. If you are concerned that you may be more vulnerable to air pollution, <a href="#">further advice is also available here</a>.</p>
+  </div>
+</div>
+{% endblock %}

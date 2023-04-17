@@ -1,0 +1,73 @@
+{{ govukSummaryList({
+  rows: [{
+    key: {
+      text: "Notifications"
+    },
+    value: {
+      text: data.notifications | formatList | replace("-"," ") | capitalize
+    },
+    actions: {
+      items: [{
+        href: "/notifications/",
+        text: "Change",
+        visuallyHiddenText: "notifications"
+      }]
+    }
+  }, {
+    key: {
+      text: "Alert level"
+    },
+    value: {
+      text: data.level | replace("-"," ") | capitalize
+    },
+    actions: {
+      items: [{
+        href: "/notifications/level",
+        text: "Change",
+        visuallyHiddenText: "alert level"
+      }]
+    }
+  } if data.notifications | includes("pollution-alerts"), {
+    key: {
+      text: "Alert frequency"
+    },
+    value: {
+      text: data.frequency | replace("-"," ") | capitalize
+    },
+    actions: {
+      items: [{
+        href: "/notifications/frequency",
+        text: "Change",
+        visuallyHiddenText: "frequency"
+      }]
+    }
+  } if data.notifications | includes("pollution-alerts"), {
+    key: {
+      text: "Locations"
+    },
+    value: {
+      text: data.location | upper
+    },
+    actions: {
+      items: [{
+        href: "/notifications/location",
+        text: "Change",
+        visuallyHiddenText: "locations"
+      }]
+    }
+  }, {
+    key: {
+      text: "Email address"
+    },
+    value: {
+      text: data.email
+    },
+    actions: {
+      items: [{
+        href: "/notifications/email",
+        text: "Change",
+        visuallyHiddenText: "email address"
+      }]
+    }
+  }]
+}) }}

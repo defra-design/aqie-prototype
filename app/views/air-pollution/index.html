@@ -1,0 +1,54 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Air pollution" %}
+{% set section = "air-pollution" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "/"
+    }, {
+      text: title
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter-from-desktop">
+    {{ xGovukSubNavigation({
+      visuallyHiddenTitle: "Navigation",
+      items: [{
+        text: "Introduction",
+        href: "/air-pullution",
+        current: true
+      }, {
+        text: "What is air pollution made of?",
+        href: "#"
+      }, {
+        text: "Where does air pollution come from?",
+        href: "#"
+      }, {
+        text: "Does the amount of air pollution around me change?",
+        href: "#"
+      }, {
+        text: "How much of a problem is air pollution in the UK?",
+        href: "#"
+      }, {
+        text: "What is the government doing to reduce air pollution?",
+        href: "#"
+      }]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-three-quarters-from-desktop">
+    <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+    <p class="govuk-body-l">Air pollution is an umbrella term for lots of different types of pollution in the air around us.</p>
+
+    <p>All these pollutants can be inhaled and absorbed into your body. Different types of pollution are caused by different activities and behaviours and can affect your body and the environment in different ways.</p>
+
+    <p>There’s lots to understand about air pollution. We’ve pulled together some of the most useful information.</p>
+  </div>
+</div>
+{% endblock %}

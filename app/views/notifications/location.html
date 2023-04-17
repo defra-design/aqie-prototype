@@ -1,0 +1,20 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "Where would you like to get notifications for?" %}
+
+{% block question %}
+  <h1 class="govuk-heading-l">{{ title }}</h1>
+
+  {{ govukInput({
+    id: "location",
+    name: "location",
+    classes: "govuk-input--width-10",
+    label: {
+      text: "Enter a postcode"
+    },
+    value: data.location,
+    autocomplete: "postal-code"
+  }) }}
+
+  <p class="govuk-!-margin-bottom-8"><a href="#">Add another location</a></p>
+{% endblock %}

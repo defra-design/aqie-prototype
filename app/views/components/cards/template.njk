@@ -10,16 +10,18 @@
 
   <ul class="app-cards__list">{% for item in params.items %}
     <li class="app-cards__list-item">
-      <div class="app-cards__list-item-wrapper">
-        <h{{ headingLevel + 1 }} class="app-cards__sub-heading govuk-heading-s">
-          <a class="app-cards__link govuk-link" href="{{ item.href }}">
-            {{ item.text }}
-          </a>
-        </h{{ headingLevel + 1 }}>
-        {% if item.description %}
-          <p class="govuk-body app-cards__description">{{ item.description }}</p>
-        {% endif %}
-      </div>
+      {% if item.image %}
+        <img class="app-cards__image" src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+      {% endif %}
+      <h{{ headingLevel + 1 }} class="app-cards__sub-heading govuk-heading-s">
+        <a class="app-cards__link govuk-link" href="{{ item.href }}">
+          {{ item.text }}
+        </a>
+      </h{{ headingLevel + 1 }}>
+
+      {% if item.description %}
+        <p class="govuk-body app-cards__description">{{ item.description }}</p>
+      {% endif %}
     </li>
   {% endfor %}</ul>
 </div>

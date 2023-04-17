@@ -1,0 +1,30 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "Which notifications do you want to subscribe to?" %}
+
+{% block question %}
+  {{ govukCheckboxes({
+    name: "notifications",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true,
+        text: title
+      }
+    },
+    items: [{
+      value: "pollution-alerts",
+      text: "Air pollution alerts",
+      hint: {
+        text: "Get an email when pollution in an area goes above a safe level."
+      }
+    }, {
+      value: "daily-summary",
+      text: "Daily summary",
+      hint: {
+        text: "Get a daily email that includes an air quality forecast and pollutant levels from the previous 24 hours."
+      }
+    }],
+    values: data.notifications
+  }) }}
+{% endblock %}

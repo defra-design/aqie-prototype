@@ -1,0 +1,49 @@
+{% extends "layouts/email.html" %}
+
+{% set location = "Brighton, BN1" %}
+{% set station = "Brighton Preston Park" %}
+{% set index = 7 %}
+{% set level = daqi(index).name | capitalize %}
+{% set pollutant = "Sulphur dioxide" %}
+
+{% set subject = level + " air pollution alert for " + location %}
+{% set from = "GOV.UK <notifications@air-quality.service.gov.uk>" %}
+{% set to = "Jane Doe <jane.doe@example.com>" %}
+
+{% block content %}
+  <h1 class="govuk-heading-l">{{ subject | noOrphans | safe }}</h1>
+
+  <div class="govuk-inset-text">
+    <p>The nearest monitoring station at <a href="#">{{ station }}</a> has recorded a reading of 560 µg/m³ for {{ pollutant }} (the safe level for this pollutant is a value below 266 µg/m³).</p>
+  </div>
+
+  <p>This means the level of air pollution in {{ location }} is currently {{ level }}&nbsp;({{ index }}).</p>
+
+  <p>{{ level }} levels of air pollution can affect adults and children with:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>lung problems</li>
+    <li>heart problems</li>
+  </ul>
+
+  <p>Try not to do too much outdoor physical activity, especially if you experience symptoms such as:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>sore eyes</li>
+    <li>a cough</li>
+    <li>a sore throat</li>
+  </ul>
+
+  <p>People with asthma may find they need to use their reliever inhaler more often. Follow your doctor’s usual advice about exercising and managing your condition.</p>
+
+  <p>Visit <a href="/">{{ serviceName }}</a> for advice about air pollution and what actions we can take to reduce it.</p>
+
+  <p>
+    Air quality information service<br>
+    Department for Environment, Food &amp; Rural Affairs
+  </p>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <p>You signed up for email alerts when the level of air pollution in {{ location }} is moderate or higher. <a href="#">Update notification settings</a> or <a href="#">unsubscribe</a>.</p>
+{% endblock %}

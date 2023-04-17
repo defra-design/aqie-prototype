@@ -119,3 +119,14 @@ addFilter('prependArticle', (string) => {
     return 'A ' + string
   }
 })
+
+/**
+ * Check if array includes value
+ *
+ * @param {Array} array - Array
+ * @param {string} value - Value to look up
+ * @returns {boolean} Value appears in array
+ */
+addFilter('includes', (array = [], value) => {
+  return array.includes(value)
+})

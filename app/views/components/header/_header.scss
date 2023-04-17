@@ -1,3 +1,7 @@
 .app-header {
   border-bottom-color: $govuk-brand-colour;
+
+  .govuk-header__navigation--end {
+    float: right;
+  }
 }

@@ -1,0 +1,31 @@
+{% extends "layouts/wizard.html" %}
+
+{% set title = "When would you like to get air pollution alerts?" %}
+{% set level = data.level or "moderate" | lower %}
+
+{% block question %}
+  {{ govukRadios({
+    name: "frequency",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        isPageHeading: true,
+        text: title
+      }
+    },
+    items: [{
+      value: "immediate-exposure",
+      text: "Immediately",
+      hint: {
+        text: "Alert sent 1 hour after a " + level + " or higher level of pollution has been recorded and verified"
+      }
+    }, {
+      value: "prolonged-exposure",
+      text: "After prolonged exposure",
+      hint: {
+        text: "Alert sent if " + level + "  or higher levels of pollution have been recorded consistently over the last 30 days"
+      }
+    }],
+    value: data.frequency
+  }) }}
+{% endblock %}

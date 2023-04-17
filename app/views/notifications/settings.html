@@ -1,0 +1,18 @@
+{% extends "layouts/form.html" %}
+
+{% set title = "Email notification settings" %}
+
+{% block form %}
+  {{ govukNotificationBanner({
+    text: "Notification settings updated",
+    type: "success"
+  }) }}
+
+  <h1 class="govuk-heading-l">{{ title }}</h1>
+
+  {% include "includes/notification-settings" %}
+
+  {{ govukButton({
+    text: "Update"
+  }) }}
+{% endblock %}
