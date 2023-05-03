@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="80">
+  <defs>
+    <linearGradient id="a" x1="50.22%" x2="50%" y1="49.45%" y2="51.05%">
+      <stop offset="0%" stop-color="#F47738" />
+      <stop offset="19.24%" stop-color="#F9AA1B" />
+      <stop offset="62.7%" stop-color="#00703C" />
+      <stop offset="100%" stop-color="#14896A" />
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#F3F2F1" d="M0 0h50v60H0z" /><text fill="#6F777B"
+      font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="300">
+      <tspan x="263.54" y="77.38">Tue</tspan>
+    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      font-weight="300">
+      <tspan x="211.1" y="77.38">Mon</tspan>
+    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      font-weight="300">
+      <tspan x="162.86" y="77.38">Sun</tspan>
+    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      font-weight="300">
+      <tspan x="114.33" y="77.38">Sat</tspan>
+    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      font-weight="300">
+      <tspan x="66.65" y="77.38">Fri</tspan>
+    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      font-weight="300">
+      <tspan x="13.42" y="77.38">Thu</tspan>
+    </text>
+    <path fill="#B1B4B6" d="M75 0h1v60h-1zM25 0h1v60h-1zm100 0h1v60h-1zm50 0h1v60h-1zm50 0h1v60h-1zm50 0h1v60h-1z"
+      opacity=".5" />
+    <path fill="url(#a)" fill-rule="nonzero"
+      d="M300 0v4h-39.26a6 6 0 0 0-5.69 4.07l-6.31 18.64a10 10 0 0 1-9.48 6.79h-30.95a6 6 0 0 0-4.24 1.76l-5.31 5.31a10 10 0 0 1-7.07 2.93H58.3a10 10 0 0 1-7.07-2.93l-5.31-5.31a6 6 0 0 0-4.24-1.76H0v-4h41.69a10 10 0 0 1 7.07 2.93l5.31 5.31a6 6 0 0 0 4.24 1.76H191.7a6 6 0 0 0 4.24-1.76l5.31-5.31a10 10 0 0 1 7.07-2.93h30.95a6 6 0 0 0 5.69-4.07l6.31-18.64A10 10 0 0 1 260.74 0H300Z" />
+    <circle cx="25.5" cy="31.5" r="6" fill="#FFF" stroke="#0B0C0C" stroke-width="3" />
+  </g>
+</svg>

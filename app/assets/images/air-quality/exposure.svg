@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="115">
+  <text fill="#6F777B" font-family="GDS Transport, arial, sans-serif"
+    font-size="14" font-weight="300">
+    <tspan x="263.06" y="109.38">May 3</tspan>
+  </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
+    font-weight="300">
+    <tspan x="28.07" y="109.38">Apr 4</tspan>
+  </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="12"
+    font-weight="300">
+    <tspan x="12.16" y="92">0</tspan>
+  </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="12"
+    font-weight="300">
+    <tspan x="5.02" y="52">20</tspan>
+  </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="12"
+    font-weight="300">
+    <tspan x="4.57" y="12">40</tspan>
+  </text>
+  <path fill="#B1B4B6" d="M30 87h270v1H30zm0-40h270v1H30zm0-40h270v1H30z" opacity=".5" />
+  <path fill="#1D70B8" d="M30 56h270v2H30z" />
+  <path fill="#F47738" stroke="#FFF" d="M29.5 45.5h5v41h-5zm18 6h5v35h-5z" />
+  <path fill="#B1B4B6" stroke="#FFF"
+    d="M56.5 61.5h5v25h-5zm27 2h5v23h-5zm9-3h5v26h-5zm9 3h5v23h-5zm9-3h5v26h-5zm63-2h5v28h-5zm27 0h5v28h-5zm18-2h5v30h-5zm9 0h5v30h-5zm45-2h5v32h-5zm9 4h5v28h-5zm9-4h5v32h-5zm-171 9h5v23h-5zm9-5h5v28h-5z" />
+  <path fill="#F47738" stroke="#FFF"
+    d="M65.5 47.5h5v39h-5zm9-9h5v48h-5zm63 9h5v39h-5zm9-5h5v44h-5zm9-8h5v52h-5zm9 2h5v50h-5zm18 4h5v46h-5zm9-23h5v69h-5zm18 32h5v37h-5zm27-17h5v54h-5zm9 19h5v35h-5zm9-6h5v41h-5zm9-13h5v54h-5zm-225 10h5v44h-5z" />
+</svg>
