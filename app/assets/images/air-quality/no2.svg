@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="630.9" height="339">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#979797" stroke-dasharray="2" d="M71 147h559" />
+    <path stroke="#B1B4B6" d="M71 59v240h560" />
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="560" y="327">May 18</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="490" y="327">May 17</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="420" y="327">May 16</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="350" y="327">May 15</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14"
+      transform="rotate(-90 13 179)">
+      <tspan x="-53.1" y="179.5">Concentration </tspan>
+      <tspan x="37.3" y="179.5" font-family="Helvetica-Light, Helvetica">μ</tspan>
+      <tspan x="45.1" y="179.5">g/m3 </tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="280" y="327">May 14</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="210" y="327">May 13</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="140" y="327">May 12</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="70" y="327">May 11</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="52.2" y="297">0</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="34" y="72">300</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="34.1" y="147">200</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="34.1" y="222">200</tspan>
+    </text>
+    <path fill="#B1B4B6"
+      d="M70 299h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1zm70 0h1v10h-1z" />
+    <path stroke="#1D70B8" stroke-width="2"
+      d="m70 255 9-54 9 23 8 5 9 13 9-13 9 13 8-10 9 10 11-31 8 31 12-10h4l10 20 8-10 10-10 7 20 9-169 9 169 9-10 8 10 9 10 9-20h9l8 20h10l8-10 9 10 8-10 9 10 9-20 9 20 8-10h18l9-20 8 10 9-10 9 20 8 10 9-10 9-20 9 20 8-10 9-40 9 40h17l9 10 9-10 9 10h8l9-130 9 130 9-10h17l9-10 9 10 8-10 9 20 9 10 9 21 8-10 9 20" />
+    <path fill="#FFF" stroke="#B1B4B6" d="M1 1h284v39H1z" />
+    <path fill="#F3F2F1" stroke="#B1B4B6" d="M86 1h94v39H86z" />
+    <text fill="#0B0C0C" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="98" y="25">Last 7 days</tspan>
+    </text>
+    <text fill="#0B0C0C" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="192" y="25">Last 30 days</tspan>
+    </text>
+    <text fill="#0B0C0C" font-family="GDS Transport, arial, sans-serif" font-size="14">
+      <tspan x="12" y="25">Last hour</tspan>
+    </text>
+  </g>
+</svg>

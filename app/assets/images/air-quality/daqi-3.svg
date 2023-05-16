@@ -1,55 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="445" height="50">
   <defs>
-    <path id="a" d="M30 5h30v30H30z" />
-    <path id="b" d="M120 5h30v30h-30z" />
-    <path id="c" d="M210 5h30v30h-30z" />
-    <path id="d" d="M240 5h30v30h-30z" />
+    <path id="a" d="M45 5h40v40H45z" />
+    <path id="b" d="M180 5h40v40h-40z" />
+    <path id="c" d="M315 5h40v40h-40z" />
+    <path id="d" d="M360 5h40v40h-40z" />
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <path fill="#28A197" d="M0 5h30v30H0z" opacity=".5" />
+    <path fill="#28A197" d="M0 5h40v40H0z" opacity=".5" />
     <g opacity=".5">
       <use xlink:href="#a" fill="#28A197" />
       <use xlink:href="#a" fill="#00703C" fill-opacity=".5" />
     </g>
-    <path fill="#FD0" d="M90 5h30v30H90z" opacity=".5" />
+    <path fill="#FD0" d="M135 5h40v40h-40z" opacity=".5" />
     <g opacity=".5">
       <use xlink:href="#b" fill="#FD0" />
       <use xlink:href="#b" fill="#F47738" fill-opacity=".5" />
     </g>
-    <path fill="#F47738" d="M150 5h30v30h-30z" opacity=".5" />
-    <path fill="#D4351C" d="M180 5h30v30h-30z" opacity=".5" />
+    <path fill="#F47738" d="M225 5h40v40h-40z" opacity=".5" />
+    <path fill="#D4351C" d="M270 5h40v40h-40z" opacity=".5" />
     <g opacity=".5">
       <use xlink:href="#c" fill="#D4351C" />
-      <use xlink:href="#c" fill="#0B0C0C" fill-opacity=".25" />
+      <use xlink:href="#c" fill="#0B0C0C" fill-opacity=".3" />
     </g>
     <g opacity=".5">
       <use xlink:href="#d" fill="#D4351C" />
       <use xlink:href="#d" fill="#0B0C0C" fill-opacity=".5" />
     </g>
-    <path fill="#0B0C0C" d="M270 5h30v30h-30z" opacity=".5" /><text fill="#FFF"
-      font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="12" y="25">1</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="42" y="25">2</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="102" y="25">4</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="132" y="25">5</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="162" y="25">6</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="192" y="25">7</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="222" y="25">8</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="252" y="25">9</tspan>
-    </text><text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="bold">
-      <tspan x="278" y="25">10</tspan>
+    <path fill="#0B0C0C" d="M405 5h40v40h-40z" opacity=".5" />
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="15" y="30">1</tspan>
     </text>
-    <path fill="#00703C" stroke="#0B0C0C" stroke-width="5" d="M57.5 2.5h35v35h-35z" />
-    <path stroke="#FFF" stroke-width="3" d="M58.5 3.5h33v33h-33z" /><text fill="#FFF"
-      font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
-      <tspan x="70" y="27">3</tspan>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="60" y="30">2</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold"
+     >
+      <tspan x="150" y="30">4</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="195" y="30">5</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="240" y="30">6</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="285" y="30">7</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="330" y="30">8</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="375" y="30">9</tspan>
+    </text>
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="415" y="30">10</tspan>
+    </text>
+    <path fill="#00703C" stroke="#0B0C0C" stroke-width="5" d="M88 3h44v44H88z" />
+    <path stroke="#FFF" stroke-width="2" d="M89 4h42v42H89z" />
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="19" font-weight="bold">
+      <tspan x="105" y="30">3</tspan>
     </text>
   </g>
 </svg>

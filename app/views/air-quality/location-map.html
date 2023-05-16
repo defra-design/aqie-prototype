@@ -1,0 +1,199 @@
+{% extends "layouts/map.html" %}
+
+{% set title = "Air pollution" %}
+{% set section = "air-quality" %}
+{% set containerClasses = "app-width-container--map" %}
+
+{% macro legend(items) %}
+<ul class="govuk-list app-map__key">
+{% for id, text in items %}
+  <li class="app-map__key-item app-map__key-item--{{ id }}">{{ text }}</li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{% block content %}
+<div class="app-map__overlay">
+  <div class="app-map__exit-link">
+    {{ govukBackLink({
+      classes: "govuk-!-margin-0",
+      href: "/air-quality/location",
+      text: "Exit map"
+    }) }}
+  </div>
+
+  <div class="app-map__options">
+    {{ govukCheckboxes({
+      classes: "govuk-checkboxes--small",
+      formGroup: {
+        classes: "govuk-!-margin-bottom-0"
+      },
+      fieldset: {
+        legend: {
+          classes: "govuk-fieldset__legend--s",
+          text: "Show on map"
+        }
+      },
+      name: "options",
+      items: [{
+        value: "aqma",
+        text: "Air quality management areas"
+      }, {
+        value: "caz",
+        text: "Clean air zones"
+      }, {
+        value: "prtr",
+        text: "Industrial sites"
+      }, {
+        value: "stations",
+        text: "Monitoring stations"
+      }, {
+        value: "sca",
+        text: "Smoke control zones"
+      }]
+    }) }}
+  </div>
+
+  <svg class="app-map__zoom" xmlns="http://www.w3.org/2000/svg" width="40" height="125">
+    <path fill="#FFF" d="M0 0h40v80H0z"/>
+    <path fill="#0B0C0C" d="M21 13v6h6v2h-6v6h-2v-6h-6v-2h6v-6h2Zm-8 46h14v2H13z"/>
+    <path fill="#FFF" d="M0 85h40v40H0z"/>
+    <text fill="#0B0C0C" font-family="GDS Transport, arial, sans-serif" font-size="19" transform="translate(0 85)">
+      <tspan x="12" y="27">©</tspan>
+    </text>
+  </svg>
+</div>
+
+<div class="app-map__info">
+  <h1 class="govuk-heading-m">{{ title }}</h1>
+
+  {{ govukRadios({
+    name: "view",
+    idPrefix: "aq",
+    classes: "govuk-radios--small",
+    formGroup: {
+      classes: "govuk-!-margin-bottom-0"
+    },
+    fieldset: {
+      legend: {
+        text: "Current air pollution level",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Last updated " + ("today" | govukDate) + " at 10:00 am."
+    },
+    items: [{
+      value: "index",
+      text: "Air quality index",
+      checked: "true",
+      conditional: {
+        html: legend({
+          "3": "Low",
+          "4": "Moderate",
+          "5": "High",
+          "6": "Very high"
+        })
+      }
+    }]
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m">
+
+  {{ govukRadios({
+    name: "view",
+    idPrefix: "gasses",
+    classes: "govuk-radios--small",
+    formGroup: {
+      classes: "govuk-!-margin-bottom-0"
+    },
+    fieldset: {
+      legend: {
+        text: "Gases",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Yearly average concentation (2022)"
+    },
+    items: [{
+      value: "o3",
+      text: "Nitrogen dioxide (NO2)",
+      conditional: {
+        html: legend({
+          "1": "Below 10 micrograms/m³",
+          "2": "11 to 20 micrograms/m³",
+          "3": "21 to 30 micrograms/m³",
+          "4": "31 to 40 micrograms/m³",
+          "5": "41 to 50 micrograms/m³",
+          "6": "51 to 60 micrograms/m³",
+          "7": "Above 60 micrograms/m³"
+        })
+      }
+    }, {
+      value: "so2",
+      text: "Sulphur dioxide (SO2)",
+      conditional: {
+        html: legend({
+          "1": "Below 4 micrograms/m³",
+          "2": "5 to 6 micrograms/m³",
+          "3": "6 to 8 micrograms/m³",
+          "4": "9 to 10 micrograms/m³",
+          "5": "11 to 12 micrograms/m³",
+          "6": "13 to 20 micrograms/m³",
+          "7": "Above 20 micrograms/m³"
+        })
+      }
+    }]
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--m">
+
+  {{ govukRadios({
+    name: "view",
+    idPrefix: "particles",
+    classes: "govuk-radios--small",
+    formGroup: {
+      classes: "govuk-!-margin-bottom-0"
+    },
+    fieldset: {
+      legend: {
+        text: "Particles",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Yearly average concentation (2022)"
+    },
+    items: [{
+      value: "pm25",
+      text: "PM2.5",
+      conditional: {
+        html: legend({
+          "1": "Below 5 micrograms/m³",
+          "2": "6 to 8 micrograms/m³",
+          "3": "9 to 10 micrograms/m³",
+          "4": "11 to 13 micrograms/m³",
+          "5": "14 to 16 micrograms/m³",
+          "6": "17 to 20 micrograms/m³",
+          "7": "Above 20 micrograms/m³"
+        })
+      }
+    }, {
+      value: "pm10",
+      text: "PM10",
+      conditional: {
+        html: legend({
+          "1": "Below 17 micrograms/m³",
+          "2": "18 to 20 micrograms/m³",
+          "3": "21 to 25 micrograms/m³",
+          "4": "26 to 30 micrograms/m³",
+          "5": "31 to 35 micrograms/m³",
+          "6": "36 to 40 micrograms/m³",
+          "7": "Above 40 micrograms/m³"
+        })
+      }
+    }]
+  }) }}
+</div>
+{% endblock %}

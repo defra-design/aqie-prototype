@@ -124,3 +124,18 @@
     display: none;
   }
 }
+
+.app-cards__list-item--offset {
+  border-top: 0;
+  background-color: govuk-colour("light-grey");
+  padding: govuk-spacing(2);
+  padding-top: 0;
+}
+
+.app-cards__list-item--green {
+  background-color: govuk-tint($daqi-colour-3, 95%);
+
+  .app-big-number {
+    color: govuk-shade($daqi-colour-3, 30%);
+  }
+}

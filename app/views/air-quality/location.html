@@ -1,83 +1,178 @@
-{% extends "layouts/map.html" %}
+{% extends "layouts/content.html" %}
 
-{% set title = "SE1 6SB" %}
+{% set title = "Air quality in Elephant & Castle, SE1" %}
 {% set section = "air-quality" %}
-{% set containerClasses = "app-width-container--map" %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/",
+      text: "Home"
+    }, {
+      href: "/air-quality",
+      text: "Local air quality"
+    }]
+  }) }}
+{% endblock %}
 
 {% block content %}
-<div class="app-map__overlay">
-  <div class="app-map__exit-link">
-    {{ govukBackLink({
-      classes: "govuk-!-margin-0",
-      href: "/air-quality",
-      text: "Exit map"
-    }) }}
+<h1 class="govuk-heading-l">{{ title | noOrphans | safe }}</h1>
+
+{{ govukButton({
+  classes: "govuk-button--secondary",
+  href: "/air-quality/location-map",
+  text: "View air pollution on a map"
+}) }}
+
+<p>Air pollution is currently low (3). Enjoy your normal outdoor activities.</p>
+
+<p><img src="/public/images/air-quality/daqi-3.svg" alt="3"></p>
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+<p>Air pollution for this location is usually low (2).</p>
+
+<p>It is expected to remain low over the next 5 days.</p>
+
+<p><img src="/public/images/air-quality/forecast.svg" alt="Forecast" width="100%"></p>
+
+<p class="govuk-body-s app-!-secondary-text-colour">Forecast updated hourly. Last updated {{ "today" | govukDate }} at 10:00 am.</p>
+
+{{ appActionLink({
+  href: "/notifications",
+  text: "Sign up for air quality notifications and alerts for this location",
+  size: "small",
+  type: "alert"
+}) }}
+
+{% call appSection({
+  title: "Gases"
+}) %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <p>The main source of nitrogen dioxide (NO2) and sulphur dioxide (SO2) is from burning fossil fuels such as petrol, diesel, wood and coal.</p>
+      <p>These gases can lead to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>asthma</li>
+        <li>bronchitis</li>
+        <li>irritation and constriction of the airways</li>
+      </ul>
+    </div>
   </div>
-  <span class="app-map__point app-map__point--location"></span>
-  <a class="app-map__point app-map__point--station app-map__point--daqi-3" href="#">3</a>
-  <a class="app-map__point app-map__point--station app-map__point--daqi-4" href="#">4</a>
-</div>
 
-<div class="app-map__info">
-  <h1 class="govuk-heading-m">{{ title }}</h1>
-
-  <h2 class="govuk-heading-s">Current air pollution</h2>
-  <p class="govuk-!-margin-bottom-2"><img src="/public/images/air-quality/daqi-3.svg"></p>
-  <p class="govuk-body-s">Air pollution is currently <strong>low</strong>. Enjoy your normal outdoor activities.</p>
-
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-  <h2 class="govuk-heading-s">5-day air pollution forecast</h2>
-  <p class="govuk-!-margin-bottom-2"><img src="/public/images/air-quality/forecast.svg"></p>
-  <p class="govuk-body-s govuk-!-margin-bottom-2">Pollution levels should remain low until early next week when levels are expected to rise.</p>
-  <p class="govuk-body-s"><a href="#">Air quality over the past 30 days</a></p>
-
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-  <h2 class="govuk-heading-s">Primary pollutant in {{ title }}</h2>
-  <p class="govuk-body-s"><strong>PM 2.5</strong> comes from vehicles and burning fuels such as wood and coal.</p>
-  <p class="govuk-!-margin-bottom-2"><img src="/public/images/air-quality/exposure.svg"></p>
-  <p class="govuk-body-s govuk-!-margin-bottom-2">The recommended daily threshold (15µg/m3) was exceeded on 16 of the last 30 days.</p>
-  <p class="govuk-body-s"><a href="#">Pollutants and their safe levels</a></p>
-
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-  {{ govukRadios({
-    classes: "govuk-radios--small",
-    formGroup: {
-      classes: "govuk-!-margin-bottom-0"
-    },
-    name: "map",
-    fieldset: {
-      legend: {
-        text: "Map view",
-        classes: "govuk-fieldset__legend--s"
-      }
-    },
+  {{ appCards({
+    classes: "govuk-!-margin-bottom-4 govuk-!-margin-top-4",
     items: [{
-      value: "air-quality",
-      text: "Current air quality",
-      checked: "true"
+      classes: "app-cards__list-item--offset app-cards__list-item--green",
+      href: "#",
+      text: "Ozone (O3)",
+      description: "Formed in the air from reactions between other pollutants.",
+      html: appBigNumber({
+        number: "65",
+        unit: "micrograms/m³"
+      }) + govukTag({
+        classes: "govuk-tag--green",
+        text: "Low"
+      }) + "<span class=\"govuk-body-s govuk-!-margin-left-1 app-!-secondary-text-colour\">Target limit: 100 µg/m3</span>"
     }, {
-      value: "pm25",
-      html: "Particulate matter (PM 2.5)"
+      classes: "app-cards__list-item--offset app-cards__list-item--green",
+      href: "/air-quality/location-pollutant",
+      text: "Nitrogen dioxide (NO2)",
+      description: "Produced by burning fossil fuels in cars, power plants, and factories.",
+      html: appBigNumber({
+        number: "48",
+        unit: "micrograms/m³"
+      }) + govukTag({
+        classes: "govuk-tag--green",
+        text: "Low"
+      }) + "<span class=\"govuk-body-s govuk-!-margin-left-1 app-!-secondary-text-colour\">Target limit: 200 µg/m3</span>"
     }, {
-      value: "no2",
-      html: "Nitrogen dioxide (NO<sub>2</sub>)"
+      classes: "app-cards__list-item--offset app-cards__list-item--green",
+      href: "#",
+      text: "Sulphur dioxide (SO2)",
+      description: "Produced by burning fossil fuels in cars, power plants, and factories.",
+      html: appBigNumber({
+        number: "3",
+        unit: "micrograms/m³"
+      }) + govukTag({
+        classes: "govuk-tag--green",
+        text: "Low"
+      }) + "<span class=\"govuk-body-s govuk-!-margin-left-1 app-!-secondary-text-colour\">Target limit: 350 µg/m3</span>"
     }]
   }) }}
 
-  {{ govukCheckboxes({
-    classes: "govuk-checkboxes--small",
-    formGroup: {
-      classes: "govuk-!-margin-bottom-0"
-    },
-    name: "options",
+  <p class="govuk-body-s app-!-secondary-text-colour">Running 24 hour average. Data provided by the Environment Agency from the <a href="#">Southwark A2 Old Kent Road monitoring station</a>.<br>Last updated {{ "today" | govukDate }} at 11:00 am.</p>
+{% endcall %}
+
+{% call appSection({
+  title: "Particles"
+}) %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <p>Particulate matter (PM), known as PM2.5 and PM10, are tiny pieces of solids or liquids in the air. They come from sources such as car tyres, brake and exhaust dust, wood burning and pollen.</p>
+      <p>These particules can enter your lungs and bloodstream and contribute to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>heart disease</li>
+        <li>strokes</li>
+        <li>respiratory problems</li>
+      </ul>
+    </div>
+  </div>
+
+  {{ appCards({
+    classes: "govuk-!-margin-bottom-4 govuk-!-margin-top-4",
     items: [{
-      value: "stations",
-      text: "Show monitoring stations",
-      checked: "true"
+      classes: "app-cards__list-item--offset",
+      href: "#",
+      text: "Particles (PM2.5)",
+      description: "Tiny particles suspended in air, 2.5 micrometers in diameter.",
+      html: appBigNumber({
+        label: "Not measured at this location"
+      })
+    }, {
+      classes: "app-cards__list-item--offset app-cards__list-item--green",
+      href: "#",
+      text: "Particles (PM10)",
+      description: "Tiny particles suspended in air, 10 micrometers in diameter.",
+      html: appBigNumber({
+        number: "22",
+        unit: "micrograms/m³"
+      }) + govukTag({
+        classes: "govuk-tag--green",
+        text: "Low"
+      }) + "<span class=\"govuk-body-s govuk-!-margin-left-1 app-!-secondary-text-colour\">Target limit: 50 µg/m3</span>"
     }]
   }) }}
-</div>
+
+  <p class="govuk-body-s app-!-secondary-text-colour">Running 24 hour average. Data provided by the Environment Agency from the <a href="#">Southwark A2 Old Kent Road monitoring station</a>.<br>Last updated {{ "today" | govukDate }} at 11:00 am.</p>
+{% endcall %}
+
+{% call appSection({
+  title: "Local industrial sites"
+}) %}
+  <p>Local industrial sites may contribute to air pollution in your area.</p>
+  {% include "includes/industrial-sites.html" %}
+{% endcall %}
+
+{% call appSection({
+  title: "Local air quality improvement"
+}) %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <p>Local councils are responsible for identifying areas of low air quality. If the air quality falls below the required standard, they must declare an Air Quality Management Area (AQMA) and publish a plan to improve it.</p>
+
+      {{ govukInsetText({
+        text: "The local council for this location is London Borough of Southwark."
+      }) }}
+
+      <p>This location falls within the <a href="#">Southwark AQMA</a>. This area is in need of improvement to reduce levels of particulate matter (PM10) and nitrogen dioxide (NO2).</p>
+
+      {{ appActionLink({
+        href: "#",
+        text: "View local improvement plans for London Borough of Southwark",
+        size: "small"
+      }) }}
+    </div>
+  </div>
+{% endcall %}
 {% endblock %}

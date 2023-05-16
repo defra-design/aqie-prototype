@@ -1,0 +1,61 @@
+.app-big-number {
+  color: inherit;
+  margin-bottom: govuk-spacing(1);
+}
+
+.app-big-number__value {
+  @include govuk-font($size: 80, $weight: bold, $line-height: 1);
+}
+
+.app-big-number__unit {
+  @include govuk-font($size: 19, $weight: bold, $line-height: 1);
+}
+
+.app-big-number__label {
+  @include govuk-font($size: 19, $weight: bold);
+
+  // This pseudo element is to bypass an issue with NVDA where block level
+  // elements are dictated separately. What’s happening here is that the label
+  // and the number technically have an inline relationship but appear to have
+  // a block relationship thanks to this element
+  &:before {
+    content: "";
+    display: block;
+  }
+}
+
+.app-big-number__link {
+  display: inline-block;
+  text-decoration: none;
+
+  // Add govuk-link hover decoration to main value if no label present but a
+  // href attribute is
+  .app-big-number__value--decorated {
+    @include govuk-link-decoration;
+    @include govuk-link-style-no-underline;
+  }
+
+  .app-big-number__label {
+    @include govuk-link-decoration;
+  }
+
+  &:hover,
+  &:active {
+    .app-big-number__label,
+    .app-big-number__value--decorated {
+      @include govuk-link-hover-decoration;
+    }
+  }
+
+  &:focus,
+  &:focus:hover {
+    .app-big-number__label,
+    .app-big-number__value--decorated {
+      text-decoration: none;
+    }
+  }
+}
+
+.app-big-number__suffix {
+  vertical-align: middle;
+}

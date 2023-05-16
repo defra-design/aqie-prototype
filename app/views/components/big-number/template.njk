@@ -1,0 +1,8 @@
+<div class="app-big-number">
+  <span class="app-big-number__value">{{ params.number }}</span>
+  {% if params.unit %}
+    <span class="app-big-number__unit">{{ params.unit }}</span>
+  {% endif %}
+  <span class="govuk-visually-hidden">&nbsp;</span>
+  <span class="app-big-number__label">{{ params.label }}</span>
+</div>

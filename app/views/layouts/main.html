@@ -2,6 +2,7 @@
 {% from "components/action-link/macro.njk" import appActionLink %}
 {% from "components/action-list/macro.njk" import appActionList %}
 {% from "components/attachment/macro.njk" import appAttachment %}
+{% from "components/big-number/macro.njk" import appBigNumber %}
 {% from "components/cards/macro.njk" import appCards %}
 {% from "components/search/macro.njk" import appSearch %}
 {% from "components/section/macro.njk" import appSection %}
@@ -54,10 +55,7 @@
       text: "Inside the home",
       href: "#"
     }, {
-      text: "In your local area",
-      href: "#"
-    }, {
-      text: "Current air quality",
+      text: "Local air quality",
       href: "/air-quality",
       current: section == "air-quality"
     }, {

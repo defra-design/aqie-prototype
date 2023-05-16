@@ -1,0 +1,127 @@
+{% extends "layouts/content.html" %}
+
+{% set section = "air-pollution" %}
+{% set caption = "Air pollution" %}
+{% set title = "Nitrogen oxides (NOx)" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter-from-desktop">
+    {{ xGovukSubNavigation({
+      visuallyHiddenTitle: "Navigation",
+      items: [{
+        text: "Introduction",
+        href: "/air-pollution"
+      }, {
+        text: "What is air pollution made of?",
+        href: "/air-pollution/pollutants",
+        current: true,
+        parent: true,
+        children: [{
+          text: "Ammonia",
+          href: "#"
+        }, {
+          text: "Carbon monoxide",
+          href: "#"
+        }, {
+          text: "Nitrogen oxides",
+          href: "/air-pollution/pollutants/nitogen-oxides",
+          current: true
+        }, {
+          text: "Mould",
+          href: "#"
+        }, {
+          text: "Ozone",
+          href: "#"
+        }, {
+          text: "Particles",
+          href: "#"
+        }, {
+          text: "Radon",
+          href: "#"
+        }, {
+          text: "Sulphur dioxide",
+          href: ""
+        }, {
+          text: "Volatile organic compounds",
+          href: "#"
+        }]
+      }, {
+        text: "Where does air pollution come from?",
+        href: "#"
+      }, {
+        text: "Does the amount of air pollution around me change?",
+        href: "#"
+      }, {
+        text: "How much of a problem is air pollution in the UK?",
+        href: "#"
+      }, {
+        text: "What is the government doing to reduce air pollution?",
+        href: "#"
+      }]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-three-quarters-from-desktop">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{ caption }}</span>
+      {{ title }}
+    </h1>
+
+    <p>Nitrogen dioxide (NO2) and nitric oxide (NO) are two closely related gases.</p>
+
+    <p>Nitrogen dioxide can also form when nitric oxide reacts with certain gases in the atmosphere. These reactions take place very quickly and are reversible, so the two gases are referred to together as nitrogen oxides (NOx).</p>
+
+    <h2 class="govuk-heading-m">Sources</h2>
+
+    <p>The main source of nitrogen oxides is the burning of fossil fuels such as petrol, diesel, wood and coal. Motor vehicles, domestic boilers and fires can all release nitrogen dioxide into the environment.</p>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+      <div class="govuk-grid-column-one-third">
+        {{ appBigNumber({
+          number: "24%",
+          label: "Industry"
+        }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {{ appBigNumber({
+          number: "41%",
+          label: "Road transport"
+        }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {{ appBigNumber({
+          number: "20%",
+          label: "Energy generation"
+        }) }}
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <p class="govuk-hint govuk-!-margin-top-2">Percentage of total NOx emmisions (2020). Source: NAEI 2022</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Health effects</h2>
+
+    <p>For the general population, exposure to nitrogen oxides is most likely to occur breathing in air from the combustion of fuel for heating, cooking and motor vehicles.</p>
+
+    <p>Nitrogen oxides can irritate the:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>skin</li>
+      <li>eyes</li>
+      <li>nose</li>
+      <li>throat</li>
+      <li>lungs</li>
+    </ul>
+
+    <p>People with asthma or heart disease may be more sensitive to the effects of nitrogen oxides.</p>
+
+    <p class="govuk-body-s govuk-!-margin-top-7 app-!-secondary-text-colour">
+      Page last reviewed: 15 May 2023<br>
+      Next review due: 15 May 2026
+    </p>
+  </div>
+</div>
+{% endblock %}

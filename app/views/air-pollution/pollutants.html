@@ -1,0 +1,107 @@
+{% extends "layouts/content.html" %}
+
+{% set section = "air-pollution" %}
+{% set caption = "Air pollution" %}
+{% set title = "What is air pollution made of?" %}
+
+{% set markdownContent %}
+## Particles
+
+Some pollution is made up of little bits of material, smaller than the width of a human hair (the numbers refer to particles up to 10 or 2.5 micrometers in width) and we can breathe them in without noticing.
+
+Often called [PM10 and PM2.5](#), these particles can come from all sorts of places including fires, exhaust fumes, smoking or dust from brake pads on cars.
+
+## Gases
+
+[Sulphur Dioxide (SO2)](#) and [Nitrogen Oxides (NOx)](/air-pollution/pollutants/nitrogen-oxides) come mostly from burning fuels or other materials, so levels are especially high around roads. But you also get them from home gas boilers, bonfires and other sources as well.
+
+[Ammonia (NH3)](#) mostly come from farms, especially from animal manure, slurry and other fertilisers used to grow crops.
+
+[Ozone (O3)](#) in the upper atmosphere protects us from UV-B rays, helping to prevent sunburn and cancer. But in the air around us, ozone gas is an irritant which can cause swelling in various parts of the body such as the lungs.
+
+While lots of pollution can have long term health impacts on people, some pollution can be dangerous straight away when there is enough of it.
+
+[Carbon Monoxide (CO)](#) is often produced by vehicles, but it is most dangerous in enclosed areas, like your home, where the amount can build up to high levels.
+
+[Radon (Rn)](#) is a naturally occurring radioactive gas that comes from the ground as the earth decays. There is an increased risk of lung cancer if exposed to high levels of radon for a long time. It’s generally not a problem in outside air but can accumulate in buildings.
+
+## Chemicals
+
+There are lots of chemicals which can create air pollution including those known as [Volatile Organic Compounds or VOCs](#). This is the name for a group of chemicals that start as liquids or solids, but disperse into the air very easily.
+
+They can come from products like air fresheners, hair sprays and cleaning products. Once the chemicals mix with the air, they become very easy for us to breathe in and can have harmful effects.
+
+## Mould
+
+[Mould](#) tends to grow in damp places. The damp might be because of leaking pipes or roofs, but is often because of condensation.
+
+The mould spores that are released can trigger allergic reactions in some people and breathing difficulties in others.
+{% endset %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter-from-desktop">
+    {{ xGovukSubNavigation({
+      visuallyHiddenTitle: "Navigation",
+      items: [{
+        text: "Introduction",
+        href: "/air-pollution"
+      }, {
+        text: "What is air pollution made of?",
+        href: "/air-pollution/pollutants",
+        current: true,
+        parent: true,
+        parent: true,
+        children: [{
+          text: "Ammonia",
+          href: "#"
+        }, {
+          text: "Carbon monoxide",
+          href: "#"
+        }, {
+          text: "Nitrogen oxides",
+          href: "/air-pollution/pollutants/nitrogen-oxides"
+        }, {
+          text: "Mould",
+          href: "#"
+        }, {
+          text: "Ozone",
+          href: "#"
+        }, {
+          text: "Particles",
+          href: "#"
+        }, {
+          text: "Radon",
+          href: "#"
+        }, {
+          text: "Sulphur dioxide",
+          href: "#"
+        }, {
+          text: "Volatile organic compounds",
+          href: "#"
+        }]
+      }, {
+        text: "Where does air pollution come from?",
+        href: "#"
+      }, {
+        text: "Does the amount of air pollution around me change?",
+        href: "#"
+      }, {
+        text: "How much of a problem is air pollution in the UK?",
+        href: "#"
+      }, {
+        text: "What is the government doing to reduce air pollution?",
+        href: "#"
+      }]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-three-quarters-from-desktop">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">{{ caption }}</span>
+      {{ title }}
+    </h1>
+
+    {{ markdownContent | govukMarkdown({ headingsStartWith: "l" }) | safe }}
+  </div>
+</div>
+{% endblock %}

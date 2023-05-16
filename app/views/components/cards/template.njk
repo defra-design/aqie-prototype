@@ -9,7 +9,7 @@
   {% endif %}
 
   <ul class="app-cards__list">{% for item in params.items %}
-    <li class="app-cards__list-item">
+    <li class="app-cards__list-item{%- if item.classes %} {{ item.classes }}{% endif -%}">
       {% if item.image %}
         <img class="app-cards__image" src="{{ item.image.src }}" alt="{{ item.image.alt }}">
       {% endif %}
@@ -22,6 +22,8 @@
       {% if item.description %}
         <p class="govuk-body app-cards__description">{{ item.description }}</p>
       {% endif %}
+
+      {% if item.html %}{{ item.html | safe }}{% endif %}
     </li>
   {% endfor %}</ul>
 </div>

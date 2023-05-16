@@ -1,25 +1,18 @@
 {% extends "layouts/content.html" %}
 
-{% set title = "Get the current air quality in your area" %}
+{% set title = "Get the air quality in your area" %}
 {% set section = "air-quality" %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-l">{{ title | noOrphans | safe }}</h1>
-    <p>The air quality in the UK is generally good, but there is still more to do.</p>
-    <p>Some factors such as:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>industrial pollution</li>
-      <li>vehicle pollution</li>
-      <li>farming activities</li>
-    </ul>
-    <p>can cause a higher level of pollution in certain areas.</p>
+    <p>The air quality in the UK is good compared to to many other countries. Yet, it is still the largest environmental risk to public health.</p>
 
     <form action="/air-quality/location" method="post">
       {{ appSearch({
         label: {
-          text: "Enter a postcode",
+          text: "Enter a location",
           classes: "govuk-label--m",
           isPageHeading: false
         },

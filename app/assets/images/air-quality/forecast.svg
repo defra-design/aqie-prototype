@@ -1,36 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" width="970" height="256.5">
   <defs>
-    <linearGradient id="a" x1="50.22%" x2="50%" y1="49.45%" y2="51.05%">
+    <linearGradient id="a" x1="50%" x2="50%" y1="-30%" y2="100%">
       <stop offset="0%" stop-color="#F47738" />
-      <stop offset="19.24%" stop-color="#F9AA1B" />
-      <stop offset="62.7%" stop-color="#00703C" />
-      <stop offset="100%" stop-color="#14896A" />
+      <stop offset="25%" stop-color="#FD0" />
+      <stop offset="50%" stop-color="#00703C" />
+      <stop offset="75%" stop-color="#14896A" />
+      <stop offset="100%" stop-color="#28A197" />
+    </linearGradient>
+    <linearGradient id="b" x1="50%" x2="50%" y1="-30%" y2="100%">
+      <stop offset="0%" stop-color="#F47738" />
+      <stop offset="25%" stop-color="#FD0" />
+      <stop offset="50%" stop-color="#00703C" />
+      <stop offset="75%" stop-color="#14896A" />
+      <stop offset="100%" stop-color="#28A197" />
+    </linearGradient>
+    <linearGradient id="c" x1="50%" x2="50%" y1="-90%" y2="100%">
+      <stop offset="0%" stop-color="#F47738" />
+      <stop offset="25%" stop-color="#FD0" />
+      <stop offset="50%" stop-color="#00703C" />
+      <stop offset="75%" stop-color="#14896A" />
+      <stop offset="100%" stop-color="#28A197" />
     </linearGradient>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <path fill="#F3F2F1" d="M0 0h50v60H0z" /><text fill="#6F777B"
-      font-family="GDS Transport, arial, sans-serif" font-size="14" font-weight="300">
-      <tspan x="263.54" y="77.38">Tue</tspan>
-    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
-      font-weight="300">
-      <tspan x="211.1" y="77.38">Mon</tspan>
-    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
-      font-weight="300">
-      <tspan x="162.86" y="77.38">Sun</tspan>
-    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
-      font-weight="300">
-      <tspan x="114.33" y="77.38">Sat</tspan>
-    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
-      font-weight="300">
-      <tspan x="66.65" y="77.38">Fri</tspan>
-    </text><text fill="#6F777B" font-family="GDS Transport, arial, sans-serif" font-size="14"
-      font-weight="300">
-      <tspan x="13.42" y="77.38">Thu</tspan>
-    </text>
-    <path fill="#B1B4B6" d="M75 0h1v60h-1zM25 0h1v60h-1zm100 0h1v60h-1zm50 0h1v60h-1zm50 0h1v60h-1zm50 0h1v60h-1z"
-      opacity=".5" />
+    <path fill="#B1B4B6" fill-opacity=".1" d="M629 5h240v220H629z" />
+    <path fill="#F3F2F1"
+      d="M29 204h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29zm0-20h940v1H29z" />
     <path fill="url(#a)" fill-rule="nonzero"
-      d="M300 0v4h-39.26a6 6 0 0 0-5.69 4.07l-6.31 18.64a10 10 0 0 1-9.48 6.79h-30.95a6 6 0 0 0-4.24 1.76l-5.31 5.31a10 10 0 0 1-7.07 2.93H58.3a10 10 0 0 1-7.07-2.93l-5.31-5.31a6 6 0 0 0-4.24-1.76H0v-4h41.69a10 10 0 0 1 7.07 2.93l5.31 5.31a6 6 0 0 0 4.24 1.76H191.7a6 6 0 0 0 4.24-1.76l5.31-5.31a10 10 0 0 1 7.07-2.93h30.95a6 6 0 0 0 5.69-4.07l6.31-18.64A10 10 0 0 1 260.74 0H300Z" />
-    <circle cx="25.5" cy="31.5" r="6" fill="#FFF" stroke="#0B0C0C" stroke-width="3" />
+      d="M29 205h33c4 0 8-3 9-7l16-46c1-4 5-7 9-7h6c4 0 8 3 9 7l16 46c1 4 5 7 9 7h49c3 0 5-1 7-3l14-14c2-2 4-3 7-3h192c3 0 5 1 7 3l14 14c2 2 4 3 7 3h72c3 0 5-1 7-3l14-14c2-2 4-3 7-3h12c3 0 5 1 7 3l14 14c2 2 4 3 7 3h12c3 0 5-1 7-3l14-14c2-2 4-3 7-3h16v40H29v-20Z"
+      opacity=".3" />
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="275" y="245">Last 30 days</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="629" y="245">00:00</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="748" y="245">12:00</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="689" y="245">06:00</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="809" y="245">18:00</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="888.9" y="245">Next 5 days</tspan>
+    </text>
+    <path fill="#B1B4B6" fill-opacity=".5"
+      d="M49 25h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1zm79 0h1v200h-1zm60 0h1v200h-1zm60 0h1v200h-1zm-179 0h1v200h-1zm280 0h1v200h-1zm-20 0h1v200h-1zm-20 0h1v200h-1zm60 0h1v200h-1zm20 0h1v200h-1zm20 0h1v200h-1z" />
+    <path fill="url(#b)" fill-rule="nonzero"
+      d="M102 144c5 0 9 3 11 7l15 47c1 3 5 6 8 6h49l6-3 14-14c2-2 5-3 8-3h192c3 0 6 1 8 3l14 14 6 3h72l6-3 14-14c2-2 5-3 8-3h12c3 0 6 1 8 3l14 14 6 3h12l6-3 14-14c2-2 5-3 8-3h16v3h-16c-2 0-4 0-6 2l-14 14c-2 2-5 4-8 4h-12c-3 0-6-2-8-4l-14-14c-2-2-4-2-6-2h-12c-2 0-4 0-6 2l-14 14c-2 2-5 4-8 4h-72c-3 0-6-2-8-4l-14-14c-2-2-4-2-6-2H213c-2 0-4 0-6 2l-14 14c-2 2-5 4-8 4h-49c-5 0-9-4-11-8l-15-47c-1-3-5-5-8-5h-6c-3 0-7 2-8 5l-15 47c-2 4-6 8-11 8H29v-3h33c3 0 7-3 8-6l15-47c2-4 6-7 11-7h6Z" />
+    <path fill="url(#c)" fill-rule="nonzero"
+      d="M730 164v3h-24c-3 0-6 1-7 4l-15 29c-2 4-6 7-10 7h-44v-3h44c3 0 6-2 7-5l15-29c2-4 6-6 10-6h24Z" />
+    <path stroke="#28A197" stroke-dasharray="2" stroke-width="3" d="M869 205h100" />
+    <path stroke="#00703C" stroke-dasharray="2" stroke-width="3" d="M732 165h74c3 0 5 1 7 3l14 14c2 2 4 3 7 3h36" />
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="205">1</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="185">2</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="165">3</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="145">4</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="125">5</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="105">6</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="85">7</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="65">8</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="12" y="45">9</tspan>
+    </text>
+    <text fill="#626A6E" font-family="GDS Transport, arial, sans-serif" font-size="12">
+      <tspan x="8" y="25">10</tspan>
+    </text>
+    <path fill="#B1B4B6" d="M29 25h1v200h-1z" />
+    <path fill="#B1B4B6" d="M29 224h640l300 1H29z" />
+    <path fill="#626A6E" d="M629 0h241v25H629z" />
+    <text fill="#FFF" font-family="GDS Transport, arial, sans-serif" font-size="12" font-weight="bold">
+      <tspan x="733.5" y="16">Today</tspan>
+    </text>
+    <circle cx="732" cy="165" r="5.5" fill="#FFF" stroke="#0B0C0C" stroke-width="3" />
   </g>
 </svg>

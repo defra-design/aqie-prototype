@@ -1,18 +1,7 @@
 {% extends "layouts/content.html" %}
 
-{% set title = "Air pollution" %}
 {% set section = "air-pollution" %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [{
-      text: "Home",
-      href: "/"
-    }, {
-      text: title
-    }]
-  }) }}
-{% endblock %}
+{% set title = "Air pollution" %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -21,11 +10,11 @@
       visuallyHiddenTitle: "Navigation",
       items: [{
         text: "Introduction",
-        href: "/air-pullution",
+        href: "/air-pollution",
         current: true
       }, {
         text: "What is air pollution made of?",
-        href: "#"
+        href: "/air-pollution/pollutants"
       }, {
         text: "Where does air pollution come from?",
         href: "#"
@@ -42,7 +31,7 @@
     }) }}
   </div>
   <div class="govuk-grid-column-three-quarters-from-desktop">
-    <h1 class="govuk-heading-xl">{{ title }}</h1>
+    <h1 class="govuk-heading-l">{{ title }}</h1>
 
     <p class="govuk-body-l">Air pollution is an umbrella term for lots of different types of pollution in the air around us.</p>
 
