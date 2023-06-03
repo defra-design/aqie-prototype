@@ -3,6 +3,18 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const { addFilter, addFunction } = govukPrototypeKit.views
 const daqi = require('./data/daqi.js')
 const pollutants = require('./data/pollutants.js')
+const { marked } = require('marked')
+const govspeak = require('@x-govuk/marked-govspeak')
+
+addFilter('govspeak', string => {
+  marked.setOptions({
+    breaks: true,
+    headerIds: false,
+    mangle: false
+  })
+  marked.use({ extensions: govspeak })
+  return marked(string)
+})
 
 /**
  * Get DAQI data from index

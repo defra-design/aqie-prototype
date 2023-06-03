@@ -14,7 +14,8 @@ $daqi-colour-8: mix(govuk-colour("red"), govuk-colour("black"), 50%);
 $daqi-colour-9: mix(govuk-colour("red"), govuk-colour("black"), 25%);
 $daqi-colour-10: govuk-colour("black");
 
-@import "./govspeak";
+// Govspeak styles
+@import "node_modules/@x-govuk/marked-govspeak/govspeak/all";
 
 // Application components
 @import "../../views/components/all";
