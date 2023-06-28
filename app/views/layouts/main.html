@@ -32,35 +32,12 @@
 {% endblock %}
 
 {% block main %}
-  {# govukPhaseBanner({
+  {{ govukPhaseBanner({
     classes: "govuk-width-container",
     tag: {
       text: "Prototype"
     },
     text: "This is a prototype of a new service. Some parts may not work yet."
-  }) #}
-
-  {{ xGovukPrimaryNavigation({
-    visuallyHiddenTitle: "Navigation",
-    items: [{
-      text: "Air pollution",
-      href: "/air-pollution",
-      current: section == "air-pollution"
-    }, {
-      text: "Health effects",
-      href: "/health-effects",
-      current: section == "health-effects"
-    }, {
-      text: "Inside the home",
-      href: "#"
-    }, {
-      text: "Local air quality",
-      href: "/air-quality",
-      current: section == "air-quality"
-    }, {
-      text: "Measurements",
-      href: "#"
-    }]
   }) }}
 
   {{ super() }}
