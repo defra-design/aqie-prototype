@@ -4,10 +4,14 @@
 //
 
 const govukPrototypeKit = require('govuk-prototype-kit')
-const notificationsController = require('./controllers/notifications.js')
+const alertsController = require('./controllers/alerts.js')
+const informationController = require('./controllers/information.js')
 
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Notifications
-router.all('/notifications/:view?', notificationsController.all)
-router.post('/notifications/:view?', notificationsController.post)
+// Alerts
+router.all('/get-air-pollution-alerts/:view?', alertsController.all)
+router.post('/get-air-pollution-alerts/:view?', alertsController.post)
+
+// Information
+router.all('/get-air-quality-information/*', informationController.all)

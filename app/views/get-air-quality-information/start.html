@@ -1,0 +1,61 @@
+{% extends "layouts/content.html" %}
+
+{% set hasSidebarColumn = true %}
+{% set pageHeadingSize = "xl" %}
+{% set startPage = true %}
+{% set title = serviceName %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "https://www.gov.uk",
+      text: "Home"
+    }, {
+      href: "https://www.gov.uk/environment",
+      text: "Environment"
+    }, {
+      href: "https://www.gov.uk/environment/pollution-and-environmental-quality",
+      text: "Pollution and environmental quality"
+    }]
+  }) }}
+{% endblock %}
+
+{% block bodyColumn %}
+  <p>You can use this service to:</p>
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>learn about air quality in your local area</li>
+    <li>check the risk to your health from local air pollution</li>
+    <li>see how your local council is improving air quality</li>
+  </ul>
+
+  {{ govukButton({
+    text: "Start now",
+    href: "/get-air-quality-information",
+    isStartButton: true
+  }) }}
+{% endblock %}
+
+{% block sidebarColumn %}
+  {{ xGovukRelatedNavigation({
+    sections: [{
+      items: [{
+        text: "Get air pollution alerts",
+        href: "/get-air-pollution-alerts/start"
+      }],
+      subsections: [{
+        title: "Pollution and environmental quality",
+        items: [{
+          text: "Clean Air Strategy 2019",
+          href: "https://www.gov.uk/government/publications/clean-air-strategy-2019"
+        }, {
+          text: "Clean air zones",
+          href: "https://www.gov.uk/guidance/driving-in-a-clean-air-zone"
+        }, {
+          text: "Air quality statistics",
+          href: "https://www.gov.uk/government/statistics/air-quality-statistics"
+        }]
+      }]
+    }]
+  }) }}
+{% endblock %}

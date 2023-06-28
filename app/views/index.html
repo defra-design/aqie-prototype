@@ -1,59 +1,52 @@
-{% extends "layouts/content.html" %}
+{% extends "layouts/main.html" %}
 
-{% set title = "Take action on air quality" %}
-{% set description = "There’s a lot to understand about air quality and how it affects us. Use this site to learn about air pollution and what actions we can take to reduce it." %}
-{% set homepage = true %}
+{% set productName = "Air Quality and Industrial Emissions" %}
+{% set serviceName = false %}
+{% set title = "Prototypes for Air Quality and Industrial Emissions" %}
+{% set bodyClasses = "app-template--defra" %}
 
-{% block content %}
-  {{ appCards({
-    heading: "Topics",
-    items: [{
-      href: "/air-pollution",
-      text: "Air pollution",
-      image: {
-        src: "/public/images/pollution.jpg"
-      },
-      description: "There’s a lot to understand about air pollution. Learn about the nature of air pollution, its sources, and the extent of its impact."
-    }, {
-      href: "/health-effects",
-      text: "Health effects",
-      image: {
-        src: "/public/images/family.jpg"
-      },
-      description: "Air pollution can affect our health throughout our lives. Find out about the main health impacts for you, your children and all of your family."
-    }, {
-      href: "#",
-      text: "Inside the home",
-      image: {
-        src: "/public/images/spray.jpg"
-      },
-      description: "Many homes have poor air quality due to factors like high humidity, allergens, and pollutants from sources like cooking and cleaning."
-    }, {
-      href: "/air-quality",
-      text: "Local air quality",
-      image: {
-        src: "/public/images/street.jpg"
-      },
-      description: "Knowing more about the air pollution in your area can help you to make decisions on how to reduce your exposure."
-    }, {
-      href: "#",
-      text: "Measurements",
-      image: {
-        src: "/public/images/monitor.jpg"
-      },
-      description: "Explore latest and historical measurements for the different pollutants tracked by our monitoring networks."
-    }]
+{% block main %}
+  {{ xGovukMasthead({
+    classes: "x-govuk-masthead--large",
+    title: {
+      html: title | noOrphans
+    },
+    description: {
+      text: "A set of trusted services to provide understandable and reliable UK air quality information, empowering citizens to protect their health."
+    }
   }) }}
 
-  {% call appSection({
-    title: "Sign up for air quality notifications and alerts"
-  }) %}
-    <div class="govuk-!-width-two-thirds">
-      <p>Get email notifications and alerts about the air quality near you.</p>
-      {{ govukButton({
-        text: "Continue",
-        href: "/notifications/"
-      }) }}
-    </div>
-  {% endcall %}
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h2 class="govuk-heading-m govuk-!-font-size-27">Get air quality information</h2>
+
+          <p><a href="/get-air-quality-information/start">Service start page for air quality information</a></p>
+
+          <h2 class="govuk-heading-m govuk-!-font-size-27">Get air pollution alerts</h2>
+
+          <p><a href="/get-air-pollution-alerts/start">Service start page for air pollution alerts</a></p>
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {{ xGovukRelatedNavigation({
+            sections: [{
+              title: "Related resources",
+              items: [{
+                text: "Design history",
+                href: "https://air-quality.designhistory.app"
+              }, {
+                text: "Glossary",
+                href: "https://air-quality.designhistory.app/glossary"
+              }, {
+                text: "Prototype repository on GitHub",
+                href: "https://github.com/defra-design/aqie-prototype"
+              }]
+            }]
+          }) }}
+        </div>
+      </div>
+    </main>
+  </div>
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Topics" %}
+
+{% block content %}
+  {{ appCards({
+    heading: "Topics",
+    items: [{
+      href: "/get-air-quality-information/topics/air-pollution",
+      text: "Air pollution",
+      image: {
+        src: "/public/images/pollution.jpg"
+      },
+      description: "There’s a lot to understand about air pollution. Learn about the nature of air pollution, its sources, and the extent of its impact."
+    }, {
+      href: "/get-air-quality-information/topics/health-effects",
+      text: "Health effects",
+      image: {
+        src: "/public/images/family.jpg"
+      },
+      description: "Air pollution can affect our health throughout our lives. Find out about the main health impacts for you, your children and all of your family."
+    }, {
+      href: "#",
+      text: "Inside the home",
+      image: {
+        src: "/public/images/spray.jpg"
+      },
+      description: "Many homes have poor air quality due to factors like high humidity, allergens, and pollutants from sources like cooking and cleaning."
+    }]
+  }) }}
+{% endblock %}

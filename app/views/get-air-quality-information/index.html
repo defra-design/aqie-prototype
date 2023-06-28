@@ -1,7 +1,6 @@
 {% extends "layouts/content.html" %}
 
 {% set title = "Get the air quality in your area" %}
-{% set section = "air-quality" %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -9,7 +8,7 @@
     <h1 class="govuk-heading-l">{{ title | noOrphans | safe }}</h1>
     <p>The air quality in the UK is good compared to to many other countries. Yet, it is still the largest environmental risk to public health.</p>
 
-    <form action="/air-quality/location" method="post">
+    <form action="/get-air-quality-information/location" method="post">
       {{ appSearch({
         label: {
           text: "Enter a location",

@@ -88,6 +88,46 @@ sub, sup {
   color: govuk-colour("white");
 }
 
+// Home page overrides
+$defra-brand-colour: #008938;
+$defra-button-inverse-shadow-colour: govuk-shade($defra-brand-colour, 30%);
+$defra-button-inverse-hover-background-colour: govuk-tint($defra-brand-colour, 90%);
+
+.app-template--defra {
+  .x-govuk-masthead {
+    background-color: $defra-brand-colour;
+
+    .x-govuk-button--inverse,
+    .x-govuk-button--inverse:link,
+    .x-govuk-button--inverse:visited {
+      @include govuk-responsive-margin(6, "top");
+      color: $defra-brand-colour;
+      box-shadow: 0 $x-govuk-button-shadow-size 0 $defra-button-inverse-shadow-colour;
+    }
+
+    .x-govuk-button--inverse:hover {
+      color: $defra-brand-colour;
+      background-color: $defra-button-inverse-hover-background-colour;
+    }
+
+    .x-govuk-button--inverse:active,
+    .x-govuk-button--inverse:focus {
+      color: $defra-brand-colour;
+      background-color: $defra-button-inverse-hover-background-colour;
+    }
+  }
+
+  .govuk-header,
+  .govuk-header__container,
+  .x-govuk-related-navigation {
+    border-color: $defra-brand-colour;
+  }
+
+  .govuk-header__logo {
+    width: auto;
+  }
+}
+
 // Utilities
 .app-\!-secondary-text-colour {
   color: $govuk-secondary-text-colour;

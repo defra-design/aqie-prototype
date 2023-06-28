@@ -1,26 +1,13 @@
 {% extends "layouts/content.html" %}
 
 {% set title = "Air quality in Elephant & Castle, SE1" %}
-{% set section = "air-quality" %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [{
-      href: "/",
-      text: "Home"
-    }, {
-      href: "/air-quality",
-      text: "Local air quality"
-    }]
-  }) }}
-{% endblock %}
 
 {% block content %}
 <h1 class="govuk-heading-l">{{ title | noOrphans | safe }}</h1>
 
 <p>Air pollution is currently low (3). Enjoy your normal outdoor activities.</p>
 
-<p><img src="/public/images/air-quality/daqi-3.svg" alt="3"></p>
+<p><img src="/public/images/get-air-quality-information/daqi-3.svg" alt="3"></p>
 
 <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
 
@@ -28,12 +15,12 @@
 
 <p>It is expected to remain low over the next 5 days.</p>
 
-<p><img src="/public/images/air-quality/forecast.svg" alt="Forecast" width="100%"></p>
+<p><img src="/public/images/get-air-quality-information/forecast.svg" alt="Forecast" width="100%"></p>
 
 <p class="govuk-body-s app-!-secondary-text-colour">Forecast updated hourly. Last updated {{ "today" | govukDate }} at 10:00 am.</p>
 
 {{ appActionLink({
-  href: "/notifications/",
+  href: "/get-air-pollution-alerts/start",
   text: "Sign up for air quality notifications and alerts for this location",
   size: "small",
   type: "alert"
@@ -70,7 +57,7 @@
       }) + "<span class=\"govuk-body-s govuk-!-margin-left-1 app-!-secondary-text-colour\">Target limit: 100 µg/m3</span>"
     }, {
       classes: "app-cards__list-item--offset app-cards__list-item--green",
-      href: "/air-quality/location-pollutant",
+      href: "/get-air-quality-information/location-pollutant",
       text: "Nitrogen dioxide (NO2)",
       description: "Produced by burning fossil fuels in cars, power plants, and factories.",
       html: appBigNumber({

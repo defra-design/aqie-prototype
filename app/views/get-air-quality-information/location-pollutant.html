@@ -1,7 +1,6 @@
 {% extends "layouts/content.html" %}
 
 {% set title = "Nitrogen dioxide in Elephant & Castle, SE1" %}
-{% set section = "air-quality" %}
 
 {% block beforeContent %}
   {{ govukBreadcrumbs({
@@ -9,10 +8,7 @@
       href: "/",
       text: "Home"
     }, {
-      href: "/air-quality",
-      text: "Local air quality"
-    }, {
-      href: "/air-quality/location",
+      href: "/get-air-quality-information/location",
       text: "Air quality in Elephant & Castle, SE1"
     }]
   }) }}
@@ -25,13 +21,13 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <p>Nitrogen dioxide is a colourless gas with an irritating pungent odour. It readily dissolves in water and is one of the main chemicals that causes acid rain.</p>
 
-    <p><a href="/air-pollution/pollutants/nitrogen-oxides">Learn more about nitrogen oxides and their health impact</a></p>
+    <p><a href="/get-air-quality-information/topics/air-pollution/pollutants/nitrogen-oxides">Learn more about nitrogen oxides and their health impact</a></p>
 
     <h2 class="govuk-heading-m">Measurement</h2>
 
     <p>Concentration of nitrogen dioxide is measured at the nearest air quality monitoring station at <a href="#">Southwark A2 Old Kent Road</a>:</p>
 
-    <p><img src="/public/images/air-quality/no2.svg" alt="NO2"></p>
+    <p><img src="/public/images/get-air-quality-information/no2.svg" alt="NO2"></p>
 
     <h2 class="govuk-heading-m">Long term exposure</h2>
 

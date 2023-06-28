@@ -21,13 +21,9 @@
   {{ govukHeader({
     classes: "app-header",
     homepageUrl: "https://gov.uk",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    navigationClasses: "govuk-header__navigation--end",
-    navigation: [{
-      href: "#",
-      text: "Sign in"
-    }]
+    serviceName: serviceName if not startPage,
+    serviceUrl: serviceUrl if not startPage,
+    productName: productName
   }) }}
 {% endblock %}
 
@@ -38,7 +34,7 @@
       text: "Prototype"
     },
     text: "This is a prototype of a new service. Some parts may not work yet."
-  }) }}
+  }) if not startPage }}
 
   {{ super() }}
 {% endblock %}
