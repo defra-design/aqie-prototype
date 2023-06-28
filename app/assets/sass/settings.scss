@@ -1,5 +1,7 @@
 @import "node_modules/govuk-frontend/govuk/helpers/colour";
 
+$govuk-suppressed-warnings: "ie8";
+
 $daqi-colour-1: govuk-colour("turquoise");
 $daqi-colour-2: mix(govuk-colour("turquoise"), govuk-colour("green"), 50%);
 $daqi-colour-3: govuk-colour("green");
