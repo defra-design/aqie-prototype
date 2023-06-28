@@ -1,3 +1,12 @@
 @import "node_modules/govuk-frontend/govuk/helpers/colour";
 
-// $govuk-brand-colour: govuk-colour("turquoise");
+$daqi-colour-1: govuk-colour("turquoise");
+$daqi-colour-2: mix(govuk-colour("turquoise"), govuk-colour("green"), 50%);
+$daqi-colour-3: govuk-colour("green");
+$daqi-colour-4: govuk-colour("yellow");
+$daqi-colour-5: mix(govuk-colour("yellow"), govuk-colour("orange"), 50%);
+$daqi-colour-6: govuk-colour("orange");
+$daqi-colour-7: govuk-colour("red");
+$daqi-colour-8: mix(govuk-colour("red"), govuk-colour("black"), 50%);
+$daqi-colour-9: mix(govuk-colour("red"), govuk-colour("black"), 25%);
+$daqi-colour-10: govuk-colour("black");
