@@ -64,20 +64,6 @@
     }]
   }) }}
 
-  {{ xGovukMasthead({
-    classes: "x-govuk-masthead--large govuk-!-margin-top-0",
-    title: {
-      text: title
-    },
-    description: {
-      text: description
-    },
-    startButton: {
-      href: "/action-plan/",
-      text: "Create your air quality action plan"
-    }
-  }) if homepage }}
-
   {{ super() }}
 {% endblock %}
 
