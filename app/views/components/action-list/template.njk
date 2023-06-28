@@ -1,5 +1,0 @@
-<ul class="govuk-list app-action-list app-action-list--{{ params.type | default("arrow") }}{{ " app-action-list--small-icon" if params.size == "small" }}{%- if params.classes %} {{ params.classes }}{% endif -%}">
-{% for item in params.items %}{% if item.text %}
-  <li class="app-action-list__item">{{ item.text | noOrphans | govukMarkdown | safe }}</li>
-{% endif %}{% endfor %}
-</ul>
