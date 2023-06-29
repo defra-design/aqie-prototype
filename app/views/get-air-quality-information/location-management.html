@@ -1,0 +1,157 @@
+{% extends "layouts/content.html" %}
+
+{% set title = "Air quality management in Elephant & Castle, SE1" %}
+{% set localAuthority = "London Borough of Southwark" %}
+{% set aqap = {
+  title: "Air Quality Action Plan 2023-2027",
+  href: "https://consultations.southwark.gov.uk/environment-leisure/air-quality-action-plan/supporting_documents/SOUTHWARK%20AIR%20QUALITY%20ACTION%20PLAN%20v12B%20consultation%20draft.pdf",
+  size: "6.4 MB",
+  pages: "65"
+} %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "/get-air-quality-information",
+      text: "Home"
+    }, {
+      href: "/get-air-quality-information/location",
+      text: "Air quality in Elephant & Castle, SE1"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-l">{{ title | noOrphans | safe }}</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    {{ govukInsetText({
+      text: "The local council for this location is " + localAuthority + "."
+    }) }}
+
+    <h2 class="govuk-heading-m">Air quality objectives</h2>
+
+    <p>{{ govukTag({
+      classes: "govuk-tag--red",
+      text: "Exceeded"
+    }) }}</p>
+
+    <p>The <a href="#">national air quality objectives (PDF)</a> are in place to protect people’s health and the environment from the effects of air pollution hotspots.</p>
+
+    <h2 class="govuk-heading-m">Air quality management areas (AQMAs)</h2>
+
+    <p>If a local authority finds any places where the national air quality objectives are not likely to be achieved, it must decalre an Air Quality Manage Area. This area could be just one or two streets, or it could be much bigger.</p>
+
+    <p>The following AQMAs have been declared by London Borough of Southwark. These are listed with the most recent first.</p>
+
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [{
+        text: "Name",
+        attributes: {
+          width: "25%"
+        }
+      }, {
+        text: "Updated",
+        attributes: {
+          width: "25%"
+        }
+      }, {
+        text: "Monitored pollutants",
+        attributes: {
+          width: "50%"
+        }
+      }],
+      rows: [
+        [{
+          html: "[Southwark AQMA](#)" | govukMarkdown
+        }, {
+          text: "2003-06-01" | govukDate
+        }, {
+          text: "Particulate Matter (PM10) and Nitrogen dioxide (NO2)"
+        }]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Measures taken to reduce air pollution</h2>
+
+    <p>A local authority with an AQMA must produce an Air Quality Action Plan (AQAP) setting out how it will achieve compliance with national air qualuty objectives.</p>
+
+    <p>The top five actions adopted in {{ localAuthority }}’s AQAP, with the highest predicted impact for local air quality, are:</p>
+
+    {{ govukTable({
+      head: [{
+        text: "Measure",
+        attributes: {
+          width: "50%"
+        }
+      }, {
+        text: "Impact"
+      }, {
+        text: "Completion date"
+      }],
+      rows: [
+        [{
+          text: "Re-assess traffic light sequencing in AQMA"
+        }, {
+          text: "Medium"
+        }, {
+          text: "2023-09" | govukDate
+        }],
+        [{
+          text: "A2 Highway Improvements"
+        }, {
+          text: "High"
+        }, {
+          text: "2025-01" | govukDate
+        }],
+        [{
+          text: "Cut Engine, Cut Pollution Signs - Drivers are encouraged to switch off engines whilst stationary"
+        }, {
+          text: "Low to medium"
+        }, {
+          text: "2023-09" | govukDate
+        }],
+        [{
+          text: "Safe Cycling and Walking Routes"
+        }, {
+          text: "Low to medium"
+        }, {
+          text: "2024-12" | govukDate
+        }],
+        [{
+          text: "The London Ultra Low Emission Zone (ULEZ)"
+        }, {
+          text: "High"
+        }, {
+          text: "2024-02" | govukDate
+        }]
+      ]
+    }) }}
+
+    <p>For more information on the action {{ localAuthority }} is taking to improve air quality, download and view the Air Quality Action Plan:</p>
+
+    {{ appAttachment({
+      headingLevel: 3,
+      title: aqap.title,
+      href: aqap.href,
+      size: aqap.size,
+      pages: aqap.pages
+    }) }}
+
+    <h2 class="govuk-heading-m">Smoke Control Areas</h2>
+
+    <p>A smoke control area is an area where people and businesses must not:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>emit a substantial amount of smoke from a chimney</li>
+      <li>buy or sell authorised fuel for use in a smoke control area unless it is used in an ‘exempt applicance’ (appliances which are approved for use in smoke control areas)</li>
+    </ul>
+
+    {{ govukInsetText({
+      text: "SE1 falls within a smoke control area."
+    }) }}
+  </div>
+</div>
+{% endblock %}
