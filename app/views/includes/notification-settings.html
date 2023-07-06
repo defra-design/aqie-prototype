@@ -1,20 +1,6 @@
 {{ govukSummaryList({
   rows: [{
     key: {
-      text: "Notifications"
-    },
-    value: {
-      text: data.notifications | formatList | replace("-"," ") | capitalize
-    },
-    actions: {
-      items: [{
-        href: "/get-air-pollution-alerts",
-        text: "Change",
-        visuallyHiddenText: "notifications"
-      }]
-    }
-  }, {
-    key: {
       text: "Alert level"
     },
     value: {

@@ -1,10 +1,10 @@
 {% extends "layouts/wizard.html" %}
 
-{% set title = "Which notifications do you want to subscribe to?" %}
+{% set title = "At what level would you like to get air pollution alerts?" %}
 
 {% block question %}
-  {{ govukCheckboxes({
-    name: "notifications",
+  {{ govukRadios({
+    name: "level",
     fieldset: {
       legend: {
         classes: "govuk-fieldset__legend--l",
@@ -13,18 +13,15 @@
       }
     },
     items: [{
-      value: "pollution-alerts",
-      text: "Air pollution alerts",
-      hint: {
-        text: "Get an email when pollution in an area goes above a safe level."
-      }
+      value: "moderate",
+      text: "Moderate"
     }, {
-      value: "daily-summary",
-      text: "Daily summary",
-      hint: {
-        text: "Get a daily email that includes an air quality forecast and pollutant levels from the previous 24 hours."
-      }
+      value: "high",
+      text: "High"
+    }, {
+      value: "very-high",
+      text: "Very high"
     }],
-    values: data.notifications
+    value: data.level
   }) }}
 {% endblock %}

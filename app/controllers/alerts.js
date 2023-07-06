@@ -2,11 +2,7 @@ const wizard = require('govuk-prototype-wizard')
 
 const adviceWizard = (req) => {
   const journey = {
-    '/get-air-pollution-alerts': {
-      '/get-air-pollution-alerts/location': () =>
-        !req.session.data.notifications?.includes('pollution-alerts')
-    },
-    '/get-air-pollution-alerts/level': {},
+    '/get-air-pollution-alerts': {},
     '/get-air-pollution-alerts/frequency': {},
     '/get-air-pollution-alerts/location': {},
     '/get-air-pollution-alerts/email': {},
