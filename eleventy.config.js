@@ -8,7 +8,10 @@ module.exports = function (eleventyConfig) {
       organisationLogo: 'royal-arms',
       organisationName: 'DEFRA',
       productName: 'Air quality design history'
-    }
+    },
+    url: process.env.GITHUB_ACTIONS
+      ? 'https://defra-design.github.io/aqie-prototype/'
+      : '/'
   })
 
   eleventyConfig.addCollection('post', collection => {
@@ -25,6 +28,9 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'docs',
       layouts: '../node_modules/@x-govuk/govuk-eleventy-plugin/layouts'
-    }
+    },
+    pathPrefix: process.env.GITHUB_ACTIONS
+      ? '/aqie-prototype/'
+      : '/'
   }
 }
