@@ -7,6 +7,9 @@ node_modules/
 migrate.log
 usage-data-config.json
 
+# Documenation ignores
+_site
+
 # General ignores
 .DS_Store
 .idea
