@@ -1,6 +1,8 @@
 ---
+layout: page
 title: Glossary
 description: Terms commonly used within Air Quality and Industrial Emissions.
+date: 2023-02-07
 ---
 
 ## 0-9

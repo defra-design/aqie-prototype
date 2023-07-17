@@ -7,6 +7,7 @@ override:tags: []
 pagination:
   data: collections.all
   size: 20
+  reverse: true
 related:
   sections:
     - title: Related links
