@@ -55,22 +55,22 @@ In terms of mapping, we also looked to explore interest in viewing local air qua
 
 ## Screenshots
 
-![Form with heading ‘Get the current air quality in your area’ and asking the user for their location.](/images/precision-prototype/1.png "Initial landing page")
+![Form with heading ‘Get the current air quality in your area’ and asking the user for their location.](../images/precision-prototype/1.png "Initial landing page")
 
-![Map showing areas in green (low) and moderate (yellow) air pollution.](/images/precision-prototype/2.png "Initial location map (showing overall air quality)")
+![Map showing areas in green (low) and moderate (yellow) air pollution.](../images/precision-prototype/2.png "Initial location map (showing overall air quality)")
 
-![Map showing street-level air pollution from NO2 using green, yellow and red.](/images/precision-prototype/3.png "Initial location map (showing NO2)")
+![Map showing street-level air pollution from NO2 using green, yellow and red.](../images/precision-prototype/3.png "Initial location map (showing NO2)")
 
-![Map showing street-level air pollution from PM2.5 using shades of green and orange.](/images/precision-prototype/4.png "Initial location map (showing PM2.5)")
+![Map showing street-level air pollution from PM2.5 using shades of green and orange.](../images/precision-prototype/4.png "Initial location map (showing PM2.5)")
 
-![Form with heading ‘Get the air quality in your area’ and asking the user for their location.](/images/precision-prototype/5.png "Revised landing page")
+![Form with heading ‘Get the air quality in your area’ and asking the user for their location.](../images/precision-prototype/5.png "Revised landing page")
 
-![Page including several sections that breaks down information about air quality in a location.](/images/precision-prototype/6.png "Air quality in Elephant & Castle, SE1")
+![Page including several sections that breaks down information about air quality in a location.](../images/precision-prototype/6.png "Air quality in Elephant & Castle, SE1")
 
-![Page showing information about nitrogen dioxide in a location.](/images/precision-prototype/7.png "Nitrogen dioxide in Elephant & Castle, SE1")
+![Page showing information about nitrogen dioxide in a location.](../images/precision-prototype/7.png "Nitrogen dioxide in Elephant & Castle, SE1")
 
-![Page showing general information about nitrogen oxides.](/images/precision-prototype/8.png "Nitrogen oxides (NOx)")
+![Page showing general information about nitrogen oxides.](../images/precision-prototype/8.png "Nitrogen oxides (NOx)")
 
-![Map showing low-resolution air pollution, highlighting large areas with green and yellow.](/images/precision-prototype/9.png "Revised location map (showing current overall air quality)")
+![Map showing low-resolution air pollution, highlighting large areas with green and yellow.](../images/precision-prototype/9.png "Revised location map (showing current overall air quality)")
 
-![Map showing low-resolution air pollution from NO2, highlighting large areas with blue, green and yellow.](/images/precision-prototype/10.png "Revised location map (showing yearly average NO2 concentration)")
+![Map showing low-resolution air pollution from NO2, highlighting large areas with blue, green and yellow.](../images/precision-prototype/10.png "Revised location map (showing yearly average NO2 concentration)")

@@ -17,7 +17,7 @@ Findings from the second round of user research with [the education prototype](/
 
 From the last 2 rounds of research, we have observed the behaviour where participants look to find a narrative route through air quality information and data:
 
-![Journey map showing different questions that a user may ask as they navigate air quality data.](/images/personalisation-prototype/narrative-routes.png)
+![Journey map showing different questions that a user may ask as they navigate air quality data.](../images/personalisation-prototype/narrative-routes.png)
 
 But before this can happen they need to have an initial hook. This might be wanting to know more about air quality in their current location, or finding out that a certain pollutant may exasperate an existing medical condition. Only then do they start to dig into the information, and want to explore the topic some more.
 
@@ -55,46 +55,46 @@ We identified 2 types of notification we could provide:
 
 ## Screenshots
 
-![Screenshot of home page](/images/personalisation-prototype/1.png "Home page")
+![Screenshot of home page](../images/personalisation-prototype/1.png "Home page")
 
-![Screenshot of air pollution landing page](/images/personalisation-prototype/2.png "Air pollution landing page")
+![Screenshot of air pollution landing page](../images/personalisation-prototype/2.png "Air pollution landing page")
 
-![Screenshot of health effects landing page](/images/personalisation-prototype/3.png "Health effects landing page")
+![Screenshot of health effects landing page](../images/personalisation-prototype/3.png "Health effects landing page")
 
-![Screenshot of action plan introduction page](/images/personalisation-prototype/4.png "Air quality action plan: Create your air quality action plan")
+![Screenshot of action plan introduction page](../images/personalisation-prototype/4.png "Air quality action plan: Create your air quality action plan")
 
-![Screenshot of form asking if the user has any health conditions](/images/personalisation-prototype/5.png "Air quality action plan: Do you have any of the following health conditions?")
+![Screenshot of form asking if the user has any health conditions](../images/personalisation-prototype/5.png "Air quality action plan: Do you have any of the following health conditions?")
 
-![Screenshot of form asking user if they own their own home](/images/personalisation-prototype/6.png "Air quality action plan: Do you own your own home?")
+![Screenshot of form asking user if they own their own home](../images/personalisation-prototype/6.png "Air quality action plan: Do you own your own home?")
 
-![Screenshot of form asking how the user heats their home](/images/personalisation-prototype/7.png "Air quality action plan: How do you heat your home?")
+![Screenshot of form asking how the user heats their home](../images/personalisation-prototype/7.png "Air quality action plan: How do you heat your home?")
 
-![Screenshot of form asking if the user uses online shopping](/images/personalisation-prototype/8.png "Air quality action plan: Do you use online shopping?")
+![Screenshot of form asking if the user uses online shopping](../images/personalisation-prototype/8.png "Air quality action plan: Do you use online shopping?")
 
-![Screenshot of form asking how the user commutes to work or school](/images/personalisation-prototype/9.png "Air quality action plan: How do you commute to work or school?")
+![Screenshot of form asking how the user commutes to work or school](../images/personalisation-prototype/9.png "Air quality action plan: How do you commute to work or school?")
 
-![Screenshot of form asking if the user drives](/images/personalisation-prototype/10.png "Air quality action plan: Do you drive?")
+![Screenshot of form asking if the user drives](../images/personalisation-prototype/10.png "Air quality action plan: Do you drive?")
 
-![Screenshot of form asking if the user exercises outside](/images/personalisation-prototype/11.png "Air quality action plan: Do you exercise outside?")
+![Screenshot of form asking if the user exercises outside](../images/personalisation-prototype/11.png "Air quality action plan: Do you exercise outside?")
 
-![Screenshot of form asking user for their postcode](/images/personalisation-prototype/12.png "Air quality action plan: What is the first part of your postcode?")
+![Screenshot of form asking user for their postcode](../images/personalisation-prototype/12.png "Air quality action plan: What is the first part of your postcode?")
 
-![Screenshot of clean air action plan](/images/personalisation-prototype/13.png "Air quality action plan: Your clean air action plan")
+![Screenshot of clean air action plan](../images/personalisation-prototype/13.png "Air quality action plan: Your clean air action plan")
 
-![Screenshot of form asking which notifications the user wants to subscribe to](/images/personalisation-prototype/14.png "Notifications: Which notifications do you want to subscribe to?")
+![Screenshot of form asking which notifications the user wants to subscribe to](../images/personalisation-prototype/14.png "Notifications: Which notifications do you want to subscribe to?")
 
-![Screenshot of form asking user at which level they would like to get alerts](/images/personalisation-prototype/15.png "Notifications: At what level would you like to get air pollution alerts?")
+![Screenshot of form asking user at which level they would like to get alerts](../images/personalisation-prototype/15.png "Notifications: At what level would you like to get air pollution alerts?")
 
-![Screenshot of form asking user when they would like to get alerts](/images/personalisation-prototype/16.png "Notifications: When would you like to get air pollution alerts?")
+![Screenshot of form asking user when they would like to get alerts](../images/personalisation-prototype/16.png "Notifications: When would you like to get air pollution alerts?")
 
-![Screenshot of form asking user where they would like to get alerts for](/images/personalisation-prototype/17.png "Notifications: Where would you like to get notifications for?")
+![Screenshot of form asking user where they would like to get alerts for](../images/personalisation-prototype/17.png "Notifications: Where would you like to get notifications for?")
 
-![Screenshot of page asking for user’s email address](/images/personalisation-prototype/18.png "Notifications: What is your email address?")
+![Screenshot of page asking for user’s email address](../images/personalisation-prototype/18.png "Notifications: What is your email address?")
 
-![Screenshot of page allowing user to check their answers prior to subscribing](/images/personalisation-prototype/19.png "Notifications: Check your notification settings")
+![Screenshot of page allowing user to check their answers prior to subscribing](../images/personalisation-prototype/19.png "Notifications: Check your notification settings")
 
-![Screenshot showing page with confirmation banner and answers that they can change and update](/images/personalisation-prototype/20.png "Notifications: Email notification settings")
+![Screenshot showing page with confirmation banner and answers that they can change and update](../images/personalisation-prototype/20.png "Notifications: Email notification settings")
 
-![Screenshot of a mock email for an air pollution alert](/images/personalisation-prototype/21.png "Notification email: Air pollution alert")
+![Screenshot of a mock email for an air pollution alert](../images/personalisation-prototype/21.png "Notification email: Air pollution alert")
 
-![Screenshot of a mock email for a daily air quality summary](/images/personalisation-prototype/22.png "Notification email: Daily air quality summary")
+![Screenshot of a mock email for a daily air quality summary](../images/personalisation-prototype/22.png "Notification email: Daily air quality summary")

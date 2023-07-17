@@ -86,20 +86,20 @@ We have less clarity about this area of the service. However, we can use this in
 
 ## Screenshots
 
-![Screenshot of start page.](/images/initial-prototype/1.png "GOV.UK start page")
+![Screenshot of start page.](../images/initial-prototype/1.png "GOV.UK start page")
 
-![Screenshot of landing page.](/images/initial-prototype/2.png "Landing page")
+![Screenshot of landing page.](../images/initial-prototype/2.png "Landing page")
 
-![Screenshot of air quality forecast page, showing low levels of air pollution in Walsall, West Midlands.](/images/initial-prototype/3.png "Air quality forecast page (low pollution, DAQI explainer shown)")
+![Screenshot of air quality forecast page, showing low levels of air pollution in Walsall, West Midlands.](../images/initial-prototype/3.png "Air quality forecast page (low pollution, DAQI explainer shown)")
 
-![Screenshot of air quality forecast page, showing moderate levels of air pollution in Brighton, East Sussex.](/images/initial-prototype/4.png "Air quality forecast page (high pollution)")
+![Screenshot of air quality forecast page, showing moderate levels of air pollution in Brighton, East Sussex.](../images/initial-prototype/4.png "Air quality forecast page (high pollution)")
 
-![Screenshot of air quality forecast page, showing high levels of air pollution in Portsmouth, Hampshire.](/images/initial-prototype/5.png "Air quality forecast page (moderate pollution)")
+![Screenshot of air quality forecast page, showing high levels of air pollution in Portsmouth, Hampshire.](../images/initial-prototype/5.png "Air quality forecast page (moderate pollution)")
 
-![Screenshot of air quality forecast page, showing very high levels of air pollution in Westminster, London.](/images/initial-prototype/6.png "Air quality forecast page (very high pollution)")
+![Screenshot of air quality forecast page, showing very high levels of air pollution in Westminster, London.](../images/initial-prototype/6.png "Air quality forecast page (very high pollution)")
 
-![Screenshot of page listing AQMAs in Brighton and Hove.](/images/initial-prototype/7.png "Local authority page")
+![Screenshot of page listing AQMAs in Brighton and Hove.](../images/initial-prototype/7.png "Local authority page")
 
-![Screenshot of page with map showing AQMAs in Brighton and Hove.](/images/initial-prototype/8.png "Local authority page (with AQMAs shown on a map)")
+![Screenshot of page with map showing AQMAs in Brighton and Hove.](../images/initial-prototype/8.png "Local authority page (with AQMAs shown on a map)")
 
-![Screenshot of a page showing air quality measurements in the South East.](/images/initial-prototype/9.png "Region page)")
+![Screenshot of a page showing air quality measurements in the South East.](../images/initial-prototype/9.png "Region page)")

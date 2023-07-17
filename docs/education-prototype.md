@@ -35,7 +35,7 @@ Air quality is influenced by varying factors at different levels. Consider the f
 
 We started with a page of guidance driven by the above model:
 
-![Screenshot of a page split into sections](/images/education-prototype/1.png)
+![Screenshot of a page split into sections](../images/education-prototype/1.png)
 
 However, this was a lot of information to show on one page. Might it be possible to split the information up into sections?
 
@@ -52,20 +52,20 @@ We arrived at a direction where the story of air quality in a particular area co
 
 ## Screenshots
 
-![Start page on GOV.UK for ‘Get local air quality information’](/images/education-prototype/2.png "GOV.UK start page")
+![Start page on GOV.UK for ‘Get local air quality information’](../images/education-prototype/2.png "GOV.UK start page")
 
-![Page asking the user to enter a postcode](/images/education-prototype/3.png "Enter a postcode")
+![Page asking the user to enter a postcode](../images/education-prototype/3.png "Enter a postcode")
 
-![Page showing the sources of air pollution shown for a rural area](/images/education-prototype/4.png "Air quality in a location – Sources of air pollution (rural area)")
+![Page showing the sources of air pollution shown for a rural area](../images/education-prototype/4.png "Air quality in a location – Sources of air pollution (rural area)")
 
-![Page showing the sources of air pollution shown for an urban area](/images/education-prototype/5.png "Air quality in a location – Sources of air pollution (urban area)")
+![Page showing the sources of air pollution shown for an urban area](../images/education-prototype/5.png "Air quality in a location – Sources of air pollution (urban area)")
 
-![Page showing the current pollution levels and forecast](/images/education-prototype/6.png "Air quality in a location – Current pollution levels and forecast")
+![Page showing the current pollution levels and forecast](../images/education-prototype/6.png "Air quality in a location – Current pollution levels and forecast")
 
-![Page showing if postcode is within a smoke control area](/images/education-prototype/7.png "Air quality in a location – Smoke control area")
+![Page showing if postcode is within a smoke control area](../images/education-prototype/7.png "Air quality in a location – Smoke control area")
 
-![Page showing local Air Quality Management Areas](/images/education-prototype/8.png "Air quality in a location – Management areas")
+![Page showing local Air Quality Management Areas](../images/education-prototype/8.png "Air quality in a location – Management areas")
 
-![Page showing local initiatives to improve air quality](/images/education-prototype/9.png "Air quality in a location – Improving local air quality")
+![Page showing local initiatives to improve air quality](../images/education-prototype/9.png "Air quality in a location – Improving local air quality")
 
-![Page detailing the outcomes due to local air quality improvement](/images/education-prototype/10.png "Air quality in a location – Outcomes")
+![Page detailing the outcomes due to local air quality improvement](../images/education-prototype/10.png "Air quality in a location – Outcomes")
