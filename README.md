@@ -15,10 +15,5 @@ npm run dev
 
 ## Design history
 
-<https://defra-design.github.io/aqie-prototype/>
+<https://defra-design.github.io/aqie-design-history/citizen-alpha/>
 
-To serve the documentation site locally, run:
-
-```sh
-npm run docs:dev
-```
