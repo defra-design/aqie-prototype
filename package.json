@@ -10,10 +10,10 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@govuk-prototype-kit/common-templates": "^1.0.0",
-    "@ministryofjustice/frontend": "^1.6.0",
+    "@ministryofjustice/frontend": "^1.8.0",
     "@x-govuk/govuk-eleventy-plugin": "^5.0.3",
-    "@x-govuk/govuk-prototype-components": "^2.0.0",
-    "@x-govuk/govuk-prototype-filters": "^1.0.0",
+    "@x-govuk/govuk-prototype-components": "^2.0.2",
+    "@x-govuk/govuk-prototype-filters": "^1.1.0",
     "@x-govuk/marked-govspeak": "^0.1.0",
     "govuk-frontend": "^4.4.1",
     "govuk-prototype-kit": "^13.2.1",
